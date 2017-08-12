@@ -14,7 +14,7 @@
       /include websrvutl/qcpysrc,apierr                                         
                                                                                 
       //------------------------------------------------------------------//    
-      // Procedure - Get Input from HTTP-Server                           //    
+      // Get Input from HTTP-Server                                       //    
       //------------------------------------------------------------------//    
          dcl-proc getInput export;                                              
                                                                                 
@@ -47,7 +47,7 @@
                                                                                 
          end-proc;                                                              
       //------------------------------------------------------------------//    
-      // Procedure - Parse Query-String                                   //    
+      // Parse Query-String                                               //    
       // Keys and Values are separated with '&'                           //    
       // Example; id=5&name=Ross&city=Munich                              //    
       //------------------------------------------------------------------//    
@@ -78,7 +78,7 @@
                                                                                 
          end-proc;                                                              
       //------------------------------------------------------------------//    
-      // Procedure - Separate Key and Value                               //    
+      // Separate Key and Value                                           //    
       // Example:  id=5 -> Key = id  Value = 5                            //    
       //------------------------------------------------------------------//    
          dcl-proc sepKeyValue;                                                  
@@ -110,7 +110,7 @@
                                                                                 
          end-proc;                                                              
       //------------------------------------------------------------------//    
-      // Procedure - Get Key Value                                        //    
+      // Get Key Value                                                    //    
       //------------------------------------------------------------------//    
          dcl-proc getKeyValue export;                                           
          dcl-pi *n           like(GblQrystr) rtnparm; // Value                  
@@ -139,7 +139,7 @@
                                                                                 
          end-proc;                                                              
       //------------------------------------------------------------------//    
-      // Procedure Convert String up/low - 0 = upper / 1 = lower          //    
+      // Convert String up/low - 0 = upper / 1 = lower                    //    
       //------------------------------------------------------------------//    
          dcl-proc cvtstr;                                                       
          dcl-pi *n;                                                             
@@ -170,7 +170,7 @@
                                                                                 
          end-proc;                                                              
       //------------------------------------------------------------------//    
-      // Procedure - Get HTTP-Header für HTTP-Version 1.1                 //    
+      // Get HTTP-Header for HTTP-Version 1.1                             //    
       //------------------------------------------------------------------//    
          dcl-proc getHeader export;                                             
          dcl-pi *n           like(GblHeader);         // Header                 
@@ -207,4 +207,4 @@
            return LocHeader;                          // HTTP-Header            
                                                                                 
          end-proc;                                                              
-      //------------------------------------------------------------------//     
+      //------------------------------------------------------------------//           
