@@ -21,7 +21,7 @@ ReadyToClickExample providing JSON: www.myhofi.com/myapp/websrv01.pgm?id=1
 
 * Open your browser and start the HTTP-Admin: http://yourIBMip:2001/HTTPAdmin
 * Create a new HTTP-Server
-
+```
 Server name:        MYSERVER
 
 Server description: My new Webserver
@@ -31,6 +31,6 @@ Server root:        /www/myserver
 Document root:      /www/myserver/htdocs
 
 IP address:         All IP addresses
-
+```
 
  
