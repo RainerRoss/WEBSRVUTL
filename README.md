@@ -9,10 +9,10 @@ ReadyToClickExample providing JSON: www.myhofi.com/myapp/websrv01.pgm?id=1
 
 ## How to install
 
-* CRTLIB LIB(WEBSRVUTL) TEXT('Webservice Utilities')
-* CRTSRCPF FILE(WEBSRVUTL/QCLPSRC)
-* CRTSRCPF FILE(WEBSRVUTL/QCPYSRC)
-* CRTSRCPF FILE(WEBSRVUTL/QMODSRC)
+* Create a library:  `CRTLIB LIB(WEBSRVUTL) TEXT('Webservice Utilities')`
+* Create a source physical file: CRTSRCPF FILE(WEBSRVUTL/QCLPSRC)
+* Create a source physical file: CRTSRCPF FILE(WEBSRVUTL/QCPYSRC)
+* Create a source physical file: CRTSRCPF FILE(WEBSRVUTL/QMODSRC)
 * copy the files from github to your SRCPF's
 * CRTBNDCL PGM(WEBSRVUTL/WEBSRVUTLC) SRCFILE(WEBSRVUTL/QCLPSRC)
 * CALL PGM(WEBSRVUTL/WEBSRVUTLC) this creates the Binding Directory and the Service Program
