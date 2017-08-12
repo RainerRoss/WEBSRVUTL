@@ -23,6 +23,7 @@ ReadyToClickExample providing JSON: www.myhofi.com/myapp/websrv01.pgm?id=1
 * Create a new HTTP-Server
 
 Server name:        MYSERVER
+
 Server description: My new Webserver
 
 Server root:        /www/myserver
