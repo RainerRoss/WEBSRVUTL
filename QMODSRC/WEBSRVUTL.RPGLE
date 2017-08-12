@@ -49,7 +49,7 @@
       //------------------------------------------------------------------//    
       // Parse Query-String                                               //    
       // Keys and Values are separated with '&'                           //    
-      // Example; id=5&name=Ross&city=Munich                              //    
+      // Example: id=5&name=Ross&city=Munich                              //    
       //------------------------------------------------------------------//    
          dcl-proc parseQueryString;                                             
          dcl-pi *n;                                                             
