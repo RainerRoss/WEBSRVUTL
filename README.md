@@ -27,7 +27,7 @@ Server description: My new Webserver
 
 Server root:        /www/myserver
 
-Document root:      /www/myserver/htdocs
+Document root:       /www/myserver/htdocs
 IP address:         All IP addresses
 
 
