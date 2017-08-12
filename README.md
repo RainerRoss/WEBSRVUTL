@@ -6,6 +6,27 @@ Webservice Utilities running on IBM i for providing Webservices and running Weba
 The Library WEBSRVUTL gives RPG-Programmers an easy way to provide webservices powered by IBM i.
 
 ReadyToClickExample providing JSON: www.myhofi.com/myapp/websrv01.pgm?id=1
+```
+{
+    "success": true,
+    "errmsg": "",
+    "items": [
+        {
+            "id": 1,
+            "name": "MINERALÖL-TANKSTELLE",
+            "country": "DE",
+            "zip": "12559",
+            "city": "BERLIN",
+            "street": "GOETHESTR. 8",
+            "sales": 535647.59,
+            "credit": 5000.00,
+            "balance": 1650.00,
+            "date": "2015-02-06"
+        }
+    ]
+}
+```
+
 
 ## How to install
 
