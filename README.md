@@ -27,6 +27,11 @@ Server description: My new Webserver
 Server root:        /www/myserver
 Document root:      /www/myserver/htdocs
 IP address:         All IP addresses
+Port:               8010
+Log directory:      /www/myserver/logs
+Access log file:    access_log
+Error log file:     error_log
+Log maintenance     7 days
 ```
 
  
