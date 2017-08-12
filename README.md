@@ -1,2 +1,2 @@
 # WEBSRVUTL
-Werbservice Utilities for IBM i
+Webservice Utilities running on IBM i
