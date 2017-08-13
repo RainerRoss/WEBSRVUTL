@@ -63,7 +63,7 @@ License Programs:
 
 Non-License Software (open source)
 
-* YAJL from Scott Klement (create and parse JSON) Download [here](http://www.scottklement.com/yajl/)
+* YAJL from Scott Klement (create and parse JSON) - Download [here](http://www.scottklement.com/yajl/)
 
 ## How to install
 
