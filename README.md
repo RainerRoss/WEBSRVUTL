@@ -54,8 +54,8 @@ Webapplication with AJAX-Request to the JSON-Webservice www.myhofi.com/devhtm/we
 * The AJAX-Request is powered by the JavaScript UI-Library www.webix.com
 ```
 webix.ajax().post("/myapp/websrv01.pgm", {id:0},
-   function(text, data) {
-   }
+    function(text, data) {
+    }
 );
 ```
 
