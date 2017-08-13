@@ -27,6 +27,25 @@ ReadyToClickExample providing JSON www.myhofi.com/myapp/websrv01.pgm?id=1
 }
 ```
 
+ReadyToClickExample providing XML www.myhofi.com/myapp/websrv01.pgm?id=1
+```
+<data>
+	<item>
+		<id>1</id>
+		<name>MINERALÖL-TANKSTELLE</name>
+		<country>DE</country>
+		<zip>12559</zip>
+		<city>BERLIN</city>
+		<street>GOETHESTR. 8</street>
+		<sales>535647.59</sales>
+		<credit>5000.00</credit>
+		<balance>1650.00</balance>
+		<date>2015-02-06</date>
+	</item>
+</data>
+```
+
+
 
 ## How to install
 
