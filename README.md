@@ -1,5 +1,5 @@
 # WEBSRVUTL
-Webservice Utilities running on IBM i for providing Webservices and running Webapplications
+Webservice Utilities running on IBM i for providing Webservices and running Webapplications based on AJAX-Requests
 
 ## Description
 
