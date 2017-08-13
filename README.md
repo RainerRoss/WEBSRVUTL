@@ -49,7 +49,7 @@ Providing XML www.myhofi.com/myapp/websrv01.pgm?id=1
 
 ## Software Prerequisites
 
-License Programs:
+License Programs
 
 * 5770SS1 Option 3 – Extended Base Directory Support
 * 5770SS1 Option 12 – Host Servers
