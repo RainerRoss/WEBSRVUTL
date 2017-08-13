@@ -47,6 +47,10 @@ Providing XML www.myhofi.com/myapp/websrv01.pgm?id=1
 </data>
 ```
 
+Webservice called by AJAX in an App www.myhofi.com/devhtm/websrv03.html
+![capture20170813130710428](https://user-images.githubusercontent.com/10383523/29249084-d223feba-8028-11e7-85b2-bba7ef630d65.png)
+
+
 ## Software Prerequisites
 
 License Programs
