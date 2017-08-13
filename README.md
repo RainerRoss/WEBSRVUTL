@@ -79,9 +79,14 @@ Non-License Software (open source)
 * Compile the CL-Program `CRTBNDCL PGM(WEBSRVUTL/WEBSRVUTLC) SRCFILE(WEBSRVUTL/QCLPSRC)`
 * `CALL PGM(WEBSRVUTL/WEBSRVUTLC)` this creates the Binding Directory and the Service Program
 
-## Create the HTTP-Server
+## Start and stop the HTTP-Server ADMIN Instance
 
-* Open your browser and start the HTTP-Admin: http://yourIBMip:2001/HTTPAdmin
+* Start HTTP-Admin  `STRTCPSVR SERVER(*HTTP) HTTPSVR(*ADMIN)`
+* Stop HTTP-Admin `ENDTCPSVR SERVER(*HTTP) HTTPSVR(*ADMIN)`
+
+## Create a new HTTP-Server Instance `MYSERVER`
+
+* Open your browser and start the HTTP-Admin: http://yourIP:2001/HTTPAdmin
 * Create a new HTTP-Server
 ```
 Server name:        MYSERVER
