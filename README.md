@@ -3,7 +3,7 @@ Webservice Utilities running on IBM i for providing Webservices and running Weba
 
 ## Description
 
-The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers an easy way to provide webservices powered by IBM i
+The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a fast and easy way to provide webservices powered by IBM i
 
 ## ReadyToClickExamples
 
