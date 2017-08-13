@@ -110,6 +110,6 @@ Log maintenance     7 days
 ```
 * Start HTTP-Server Instance MYSERVER `STRTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 
-* Veryfy MYSERVER is running `WRKACTJOB SBS(QHTTPSVR)`
+* Verify MYSERVER is running `WRKACTJOB SBS(QHTTPSVR)`
 ![capture20170813140950764](https://user-images.githubusercontent.com/10383523/29249537-6410cea4-8031-11e7-8c9f-0edefbefac4a.png)
  
