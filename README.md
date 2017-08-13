@@ -48,8 +48,8 @@ Providing XML www.myhofi.com/myapp/websrv01.pgm?id=1
 ```
 
 Webservice called by AJAX in an App www.myhofi.com/devhtm/websrv03.html
-![capture20170813130710428](https://user-images.githubusercontent.com/10383523/29249084-d223feba-8028-11e7-85b2-bba7ef630d65.png)
 
+![capture20170813131922025](https://user-images.githubusercontent.com/10383523/29249116-26fb77dc-802a-11e7-8545-9011d20df3f0.png)
 
 ## Software Prerequisites
 
