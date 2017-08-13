@@ -95,7 +95,7 @@ Non-License Software (open source)
 ## Create a new HTTP-Server Instance `MYSERVER`
 
 * Open your browser and start the HTTP-Admin: http://yourIP:2001/HTTPAdmin
-* Create a new HTTP-Server
+* Create the new HTTP-Server Instance
 ```
 Server name:        MYSERVER
 Server description: My new Webserver
@@ -108,5 +108,5 @@ Access log file:    access_log
 Error log file:     error_log
 Log maintenance     7 days
 ```
-
+* Start HTTP-Server Instance MYSERVER `STRTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
  
