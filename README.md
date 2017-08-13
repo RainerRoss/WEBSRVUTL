@@ -47,6 +47,20 @@ Providing XML www.myhofi.com/myapp/websrv01.pgm?id=1
 </data>
 ```
 
+## Software Prerequisites
+
+License Programs:
+
+* 5770SS1 Option 3 – Extended Base Directory Support
+* 5770SS1 Option 12 – Host Servers
+* 5770SS1 Option 30 – Qshell
+* 5770SS1 Option 33 – PASE
+* 5770SS1 Option 34 – Digital Certificate Manager
+* 5770SS1 Option 39 – Components for Unicode
+* 5770TC1 - TCP/IP	
+* 5770JV1 - Java
+* 5770DG1 – HTTP-Server: Apache 2.4.12
+
 
 
 ## How to install
