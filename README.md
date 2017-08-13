@@ -85,7 +85,7 @@ Non-License Software (open source)
 * Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QMODSRC)`
 * copy the files from github to your SRCPF's
 * Compile the CL-Program `CRTBNDCL PGM(WEBSRVUTL/WEBSRVUTLC) SRCFILE(WEBSRVUTL/QCLPSRC)`
-* `CALL PGM(WEBSRVUTL/WEBSRVUTLC)` this creates the Binding Directory and the Service Program
+* Create the Binding Directory and the Service Program `CALL PGM(WEBSRVUTL/WEBSRVUTLC)` 
 
 ## Start and stop the HTTP-Server ADMIN Instance
 
