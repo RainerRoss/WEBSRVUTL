@@ -61,7 +61,9 @@ License Programs:
 * 5770JV1 - Java
 * 5770DG1 – HTTP-Server: Apache 2.4.12
 
+Non-License Software (open source)
 
+* YAJL from Scott Klement (create and parse JSON) Download [here](http://www.scottklement.com/yajl/)
 
 ## How to install
 
