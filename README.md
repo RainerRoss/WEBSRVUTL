@@ -91,7 +91,7 @@ Monitor;
 End-Mon;
 ```
 
-### Get KeyValue from Input-Data `getKeyVal()`
+### Procedure `getKeyVal()` get KeyValue from Input-Data 
 
 ```
 Monitor;
