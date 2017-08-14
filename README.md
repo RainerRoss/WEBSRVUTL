@@ -9,7 +9,7 @@ The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a
 
 ## ReadyToClickExamples
 
-Providing JSON www.myhofi.com/myapp/websrv01.pgm?id=1 [Source](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV01.RPGLE)
+Providing JSON www.myhofi.com/myapp/websrv01.pgm?id=1 [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV01.RPGLE)
 ```
 {
     "success": true,
@@ -31,7 +31,7 @@ Providing JSON www.myhofi.com/myapp/websrv01.pgm?id=1 [Source](https://github.co
 }
 ```
 
-Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 [Source](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.RPGLE)
+Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.RPGLE)
 ```
 <data>
 	<item>
