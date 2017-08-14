@@ -116,3 +116,8 @@ Log maintenance     7 days
 ![capture20170813140950764](https://user-images.githubusercontent.com/10383523/29249537-6410cea4-8031-11e7-8c9f-0edefbefac4a.png)
 
 * Call the example Homepage in your browser `http://yourIP:8010/index.html`
+
+## Create your first website
+
+* Open your favorite editor and copy 
+## Create a new HTTP-Server Instance
