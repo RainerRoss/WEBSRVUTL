@@ -31,7 +31,7 @@ Providing JSON www.myhofi.com/myapp/websrv02.pgm?id=1
 }
 ```
 
-Providing XML www.myhofi.com/myapp/websrv01.pgm?id=1
+Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1
 ```
 <data>
 	<item>
