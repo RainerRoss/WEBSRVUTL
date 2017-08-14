@@ -85,7 +85,7 @@ Non-License Software (open source)
 * Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QCLPSRC)`
 * Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QCPYSRC)`
 * Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QMODSRC)`
-* Copy the files from github to your SRCPF's
+* Copy the files from `QCLPSRC, QCPYSRC, QMODSRC` to your SRCPF's
 * Compile the CL-Program `CRTBNDCL PGM(WEBSRVUTL/WEBSRVUTLC) SRCFILE(WEBSRVUTL/QCLPSRC)`
 * Create the Binding Directory and the Service Program `CALL PGM(WEBSRVUTL/WEBSRVUTLC)` 
 
