@@ -72,6 +72,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 
 ## How to use in your RPG-Program
 
+Example GET-Request from a business partner to your IBM i `http://www.mycompany.com/myapp/request.pgmid=5
 ```
 //------------------------------------------------------------------//
 // Main                                                             //
@@ -123,7 +124,7 @@ End-Mon;
 
 ### Procedure `getKeyVal()` get KeyValue from Input-Data 
 
-Example GET-Request `http://www.mycompany/com/myapp/request.rpg?id=5&name=Ross&city=Munich`
+Example GET-Request `http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross&city=Munich`
 * `?` -> Starts the Query_String -> the Input Parameters
 * `&` -> Separator Key=Value&Key=Value
 
