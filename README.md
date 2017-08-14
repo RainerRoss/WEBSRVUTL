@@ -208,6 +208,7 @@ FileETag None
 
 ## Create a Web Service to provide JSON-Data
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/Customer.sql to your SRCPF in `MYAPP/QSQLSRC`
-* Create the Physical File Customer `RUNSQLSTM SRCFILE(MYAPP/QSQLSRC) SRCMBR(CUSTOMER)` or copy your own Customer Physical File to the Library `MYAPP`
-* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/HelloWorld.RPGLE to your SRCPF
-* Compile the program `CRTBNDRPG PGM(MYAPP/HELLOWORLD) SRCFILE(MYAPP/QRPGSRC)`
+* Create the Physical File Customer `RUNSQLSTM SRCFILE(MYAPP/QSQLSRC) SRCMBR(CUSTOMER)` and fill this File with data or copy your own Customer Physical File to the Library `MYAPP`
+* Add MYAPP, WEBSRVUTL and YAJL to your Library List `ADDLIBLE LIB(MYAPP) POSITION(*LAST)`
+* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV01.RPGLE to your SRCPF in `MYAPP/QRPGSRC`
+* Compile the program `CRTBNDRPG PGM(MYAPP/WEBSRV01) SRCFILE(WEBSRV01/QRPGSRC)`
