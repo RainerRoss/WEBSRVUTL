@@ -72,7 +72,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 
 ## How to use in your RPG-Program
 
-Example GET-Request from a business partner to your IBM i `http://www.mycompany.com/myapp/request.pgmid=5&name=Ross`
+Example GET-Request from a business partner to your IBM i `http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross`
 ```
 //------------------------------------------------------------------//
 // Main                                                             //
