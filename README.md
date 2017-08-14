@@ -115,7 +115,7 @@ Log maintenance     7 days
 * Verify that MYSERVER is running `WRKACTJOB SBS(QHTTPSVR)`
 ![capture20170813140950764](https://user-images.githubusercontent.com/10383523/29249537-6410cea4-8031-11e7-8c9f-0edefbefac4a.png)
 
-* Call the example Homepage in your browser `http://yourIP:8010/index.html`
+* Call the example Homepage from your browser `http://yourIP:8010/index.html`
 
 ## Create your first website
 
@@ -124,4 +124,4 @@ Log maintenance     7 days
 * Show the files in the folder htdocs `wrklnk '/www/myserver/htdocs/*'`
 * Select 8 on `MyFirstWebsite.html` and check the CCSID
 * Change the CCSID `CHGATR OBJ('/www/myserver/htdocs/MyFirstWebsite.html') ATR(*CCSID) VALUE(1208)`
-* Call `MyFirstWebsite.html` in your browser `http://yourIP:8010/MyFirstWebsite.html`
+* Call `MyFirstWebsite.html` from your browser `http://yourIP:8010/MyFirstWebsite.html`
