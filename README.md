@@ -144,6 +144,14 @@ Log maintenance     7 days
 
 ### Some modifications on the HTTP-Server Instance `MYSERVER` to run Web Services
 * Open HTTP-Admin from your Browser http://yourIP:2001/HTTPAdmin -> all Servers -> MYSERVER -> Tools -> Edit configuration
+* Insert 
+```
+DefaultNetCCSID 1208
+```
+* Check the IBM i CCSID `DSPSYSVAL QCCSID` when the CCSID is 65535 then insert the following line depending on your CCSID e.g. US = 37, DE = 1141
+```
+DefaultFsCCSID 1141
+```
 * Insert
 ```
 ScriptAliasMatch /myapp/(.*)  /qsys.lib/myapp.lib/$1
@@ -153,6 +161,8 @@ ScriptAliasMatch /myapp/(.*)  /qsys.lib/myapp.lib/$1
   Require all granted
 </Directory>
 ```
+* 
+
 * Stop HTTP-Server Instance MYSERVER `ENDTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 * Start HTTP-Server Instance MYSERVER `STRTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 * Call `HelloWorld` from your browser `http://yourIP:8010/myapp/HelloWorld.pgm`
