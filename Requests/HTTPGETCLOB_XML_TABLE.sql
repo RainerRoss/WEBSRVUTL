@@ -14,4 +14,3 @@ SELECT x.* FROM
 
   )
  as x;
- 
