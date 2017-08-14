@@ -89,8 +89,7 @@ Example GET-Request from a business partner to your IBM i  <br />`http://www.myc
   
     monitor;                                                  
      LocId = %dec(getKeyValue('Id'):10:0);     // Get Id      
-     on-error;                                                
-     LocId = *zero;                                          
+     on-error;                                         
     endmon;
     LocName = getKeyValue('name');             // Get Name
     
