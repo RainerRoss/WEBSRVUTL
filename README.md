@@ -184,6 +184,12 @@ MyData = 'HelloWorld';
 wrtStdout(%addr(MyData:*data):%len(MyData):DsApierr); 
 ```
 
+## IBM i System API's used from the Service Program WEBSRVUTL 
+* QtmhRdStin [more Information](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzaie/rzaieapi_qtmhrdstin.htm)
+* QtmhWrStout [more Information](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzaie/rzaieapi_qtmhwrstout.htm)
+* getenv [more Information](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/apis/evgetenv.htm)
+
+
 ## Software Prerequisites
 
 License Programs
