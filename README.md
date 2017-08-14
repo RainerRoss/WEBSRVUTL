@@ -93,7 +93,7 @@ Example GET-Request from a business partner to your IBM i  <br />`http://www.myc
     endmon;
     LocName = getKeyValue('name');             // Get Name
     
-    LocLen  = crtjson(LocJson_p:LocId);	       // Create JSON-Data
+    LocLen  = crtjson(LocJson_p:LocId:LocName); // Create JSON-Data
   
     wrtStdout(%addr(LocHeader:*data):%len(LocHeader):DsApierr);    
     wrtStdout(LocJson_p:LocLen:DsApierr);      // Send HTTP-Data 
