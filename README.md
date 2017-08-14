@@ -152,7 +152,7 @@ DefaultNetCCSID 1208
 ```
 DefaultFsCCSID 37
 ```
-* Insert
+* Insert these lines for the ability to run Web Services from Library `MYAPP`
 ```
 ScriptAliasMatch /myapp/(.*)  /qsys.lib/myapp.lib/$1
 
@@ -161,8 +161,46 @@ ScriptAliasMatch /myapp/(.*)  /qsys.lib/myapp.lib/$1
   Require all granted
 </Directory>
 ```
-* 
+* Insert these lines for the ability to run Web Services from Library `MYAPP` and Basic Authentication against the IBM i User Profiles
+```
+<Directory /qsys.lib/myapp.lib>
+  SetEnv QIBM_CGI_LIBRARY_LIST "MYAPP;WEBSRVUTL;YAJL"
+  AuthType Basic
+  AuthName "My Applications"
+  PasswdFile %%SYSTEM%%
+  UserID %%CLIENT%%
+  Require valid-user
+</Directory>  
+```
 
+* When you want GZIP the data from server to browser then insert the following lines
+```
+#=========================================================================
+# GZIP Options
+#=========================================================================
+# Deflate Module
+LoadModule deflate_module /QSYS.LIB/QHTTPSVR.LIB/QZSRCORE.SRVPGM
+# Insert Filter for Content Types except Images
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml
+#
+SetEnvIf User-Agent ^Mozilla/4 gzip-only-text/html
+SetEnvIf User-Agent ^Mozilla/4\.0[678] no-gzip
+SetEnvIf User-Agent \bMSIE !no-gzip
+SetEnvIf User-Agent \bMSIE !gzip-only-text/html
+SetEnvIf User-Agent \bMSI[E] !no-gzip
+SetEnvIf User-Agent \bMSI[E] !gzip-only-text/html
+#
+# Compression Level Highest 9 - Lowest 1
+DeflateCompressionLevel 3
+#
+#=========================================================================
+# E-Tags
+#=========================================================================
+
+Header unset ETag
+FileETag None
+#=========================================================================
+```
 * Stop HTTP-Server Instance MYSERVER `ENDTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 * Start HTTP-Server Instance MYSERVER `STRTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 * Call `HelloWorld` from your browser `http://yourIP:8010/myapp/HelloWorld.pgm`
