@@ -214,3 +214,11 @@ FileETag None
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV01.RPGLE to your SRCPF in `MYAPP/QRPGSRC`
 * Compile the program `CRTBNDRPG PGM(MYAPP/WEBSRV01) SRCFILE(WEBSRV01/QRPGSRC)`
 * Call `WEBSRV01` from your browser `http://yourIP:8010/myapp/Websrv01.pgm?id=1`
+
+## Create a Web Service to provide XML-Data
+* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/Customer.sql to your SRCPF in `MYAPP/QSQLSRC`
+* Create the Physical File Customer `RUNSQLSTM SRCFILE(MYAPP/QSQLSRC) SRCMBR(CUSTOMER)` and fill this File with data or copy your own Customer Physical File to the Library `MYAPP`
+* Add MYAPP, WEBSRVUTL and YAJL to your Library List `ADDLIBLE LIB(MYAPP) POSITION(*LAST) ADDLIBLE LIB(WEBSRVUTL) POSITION(*LAST) ADDLIBLE LIB(YAJL) POSITION(*LAST)`
+* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.RPGLE to your SRCPF in `MYAPP/QRPGSRC`
+* Compile the program `CRTBNDRPG PGM(MYAPP/WEBSRV02) SRCFILE(WEBSRV02/QRPGSRC)`
+* Call `WEBSRV02` from your browser `http://yourIP:8010/myapp/Websrv02.pgm?id=1`
