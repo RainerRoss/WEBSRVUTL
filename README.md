@@ -70,11 +70,10 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Read Data from the HTTP-Server `readStdin()`
 * Write Data to the HTTP-Server `wrtStdout()`
 
-### Procedure `getHeader()` generates the HTTP-Header
-
-* Generates a Text-HTTP Header `Header = getHeader(TEXT)`
-* Generates a JSON-HTTP Header `Header = getHeader()` or `Header = getHeader(JSON)`
-* Generates a XML-HTTP Header `Header = getHeader(XML)`
+### Procedure `getenv()` read the HTTP Environment Variables - [Useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
+```
+LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
+```
 
 ### Procedure `getInput()` reads the input from GET and POST Requests and parse the Parameter String in Keys and Values
 
@@ -84,11 +83,6 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 ```
  dcl-ds DsKeyVal qualified dim(500) inz; 
 ```
-
-### Procedure `getenv()` read the HTTP Environment Variables - [Useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
-```
-LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
-```
 #### When the Environment Variable is not delivered then put the command in a Monitor Statement like this
 ```
 Monitor;
@@ -96,6 +90,23 @@ Monitor;
  on-error;
 End-Mon;
 ```
+
+### Get KeyValue from Query-String `getKeyVal()`
+
+```
+Monitor;
+ LocAuth  = %str(getenv('AUTH_TYPE':DsApierr)); // Authentification Type
+ on-error;
+End-Mon;
+```
+
+### Procedure `getHeader()` generates the HTTP-Header
+
+* Generates a Text-HTTP Header `Header = getHeader(TEXT)`
+* Generates a JSON-HTTP Header `Header = getHeader()` or `Header = getHeader(JSON)`
+* Generates a XML-HTTP Header `Header = getHeader(XML)`
+
+
 ### Procedure `wrtStdout()` writes Data to the HTTP-Server
 
 #### The Procedure has three Parameters
