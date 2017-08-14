@@ -63,6 +63,13 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 
 ## Super simple to use
 
+* Read the HTTP Environment Variables `getenv()`
+* Get Input from HTTP-Server `getInput()`
+* Get KeyValue from Query-String `getKeyVal()`
+* Create HTTP-Header `getHeader()`
+* Read Data from the HTTP-Server`readStdin()`
+* Write Data to the HTTP-Server`wrtStdout()`
+
 ### Procedure `getHeader()` generates the HTTP-Header
 
 * Generates a Text-HTTP Header `Header = getHeader(TEXT)`
