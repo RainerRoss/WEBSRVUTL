@@ -213,3 +213,4 @@ FileETag None
 * Add MYAPP, WEBSRVUTL and YAJL to your Library List `ADDLIBLE LIB(MYAPP) POSITION(*LAST) ADDLIBLE LIB(WEBSRVUTL) POSITION(*LAST) ADDLIBLE LIB(YAJL) POSITION(*LAST)`
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV01.RPGLE to your SRCPF in `MYAPP/QRPGSRC`
 * Compile the program `CRTBNDRPG PGM(MYAPP/WEBSRV01) SRCFILE(WEBSRV01/QRPGSRC)`
+* Call `WEBSRV01` from your browser `http://yourIP:8010/myapp/Websrv01.pgm?id=1`
