@@ -78,6 +78,11 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
  dcl-ds DsKeyVal qualified dim(500) inz; 
 ```
 
+### Procedure `getenv()` read the HTTP Environment Variables - [useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
+```
+LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
+```
+
 # Software Prerequisites
 
 License Programs
