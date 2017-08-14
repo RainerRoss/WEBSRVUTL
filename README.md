@@ -123,4 +123,5 @@ Log maintenance     7 days
 #### Make sure that `MyFirstWebsite.html` has the CCSID 1208 (UTF-8)
 * Show the files in the folder htdocs `wrklnk '/www/myserver/htdocs/*'`
 * Select 8 on `MyFirstWebsite.html` and check the CCSID
-* Change the CCSID `CHGATR OBJ('/www/myserver/htdocs/MyFirstWebsite.html') ATR(*CCSID) VALUE(1208)` 
+* Change the CCSID `CHGATR OBJ('/www/myserver/htdocs/MyFirstWebsite.html') ATR(*CCSID) VALUE(1208)`
+* Call `MyFirstWebsite.html` in your browser `http://yourIP:8010/MyFirstWebsite.html`
