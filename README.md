@@ -120,5 +120,7 @@ Log maintenance     7 days
 ## Create your first website
 
 * Open your favorite editor create a new file named `MyFirstWebsite.html` in the `/www/myserver/htdocs` folder and copy https://github.com/RainerRoss/WEBSRVUTL/blob/master/HTML/MyFirstWebsite.html into the `MyFirstWebsite.html` file
-### Make sure that `MyFirstWebsite.html` has the CCSID 1208 (UTF-8)
-`wrklnk '/www/myserver/htdocs/*'`
+#### Make sure that `MyFirstWebsite.html` has the CCSID 1208 (UTF-8)
+* `wrklnk '/www/myserver/htdocs/*'`
+* select 8 on `MyFirstWebsite.html` and check the CCSID
+* change the CCSID `CHGATR OBJ('/www/myserver/htdocs/MyFirstWebsite.html') ATR(*CCSID) VALUE(1208)` 
