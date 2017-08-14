@@ -6,7 +6,7 @@ The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a
 
 <strong>Rainer Ross</strong> is the developer of the hotel search engine www.myhofi.com - this application is powered by IBM i, built with HTML5, CSS3, JavaScript, Db/2 inMemory, Symmetric Multiprocessing, Watson Content Analytics and runs on the server side with pure free RPG Web Services. myhofi.com was awarded in 2015 with the <strong>IBM Innovation Award</strong>.
 
-## Why are RPG-Programs runs faster than programs that are written in interpreted languages such as the Net.Data® and PHP scripting languages
+## Why RPG-Programs runs faster than programs that are written in interpreted languages such as the Net.Data® and PHP scripting languages
 
 CGI programs that are created by compiling source code typically run faster than programs that are written in interpreted languages such as the Net.Data® and PHP scripting languages. However, programs that are written in scripting languages tend to be easier to write, maintain, and debug. [Read more](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzaie/rzaieconcgi.htm)
 
