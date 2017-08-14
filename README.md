@@ -9,7 +9,7 @@ Rainer Ross is the developer of the hotel search engine www.myhofi.com - this ap
 
 ## ReadyToClickExamples
 
-Providing JSON www.myhofi.com/myapp/websrv02.pgm?id=1
+Providing JSON www.myhofi.com/myapp/websrv01.pgm?id=1
 ```
 {
     "success": true,
