@@ -1,6 +1,6 @@
 Select x.*
   from JSON_TABLE(
-     SYSTOOLS.HTTPGETCLOB('http://172.16.0.100:8014/myapp/websrv01.pgm?id=1',''), 
+     SYSTOOLS.HTTPGETCLOB('http://www.myhofi.com/myapp/websrv01.pgm?id=1',''), 
      '$'
      Columns(
         nested '$.items[*]' columns (
