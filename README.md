@@ -72,7 +72,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 
 ## How to use in your RPG-Program
 
-Example GET-Request from a business partner to your IBM i `http://www.mycompany.com/myapp/request.pgmid=5
+Example GET-Request from a business partner to your IBM i `http://www.mycompany.com/myapp/request.pgmid=5&name=Ross`
 ```
 //------------------------------------------------------------------//
 // Main                                                             //
@@ -80,7 +80,8 @@ Example GET-Request from a business partner to your IBM i `http://www.mycompany.
   dcl-proc main;                                                  
                                                                 
   dcl-s   LocHeader   like(GblHeader);         // HTTP-Header     
-  dcl-s   LocId       like(Id);                // Id              
+  dcl-s   LocId       like(Id);                // Id 
+  dcl-s   LocName     like(Name);              // Name     
                                                                 
     LocHeader = getHeader(JSON);               // Get HTTP-Header 
                                                                 
@@ -91,8 +92,9 @@ Example GET-Request from a business partner to your IBM i `http://www.mycompany.
      on-error;                                                
      LocId = *zero;                                          
     endmon;
-  
-    LocLen = crtjson(LocJson_p:LocId);	       // Create JSON-Data
+    LocName = getKeyValue('name');             // Get Name
+    
+    LocLen  = crtjson(LocJson_p:LocId);	       // Create JSON-Data
   
     wrtStdout(%addr(LocHeader:*data):%len(LocHeader):DsApierr);    
     wrtStdout(LocJson_p:LocLen:DsApierr);      // Send HTTP-Data 
