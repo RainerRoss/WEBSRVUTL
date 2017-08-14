@@ -93,11 +93,25 @@ End-Mon;
 
 ### Procedure `getKeyVal()` get KeyValue from Input-Data 
 
+Example GET-Request `http://www.mycompany/com/myapp/request.rpg?id=5&name=Ross&city=Munich`
 ```
+Key 	Value
+id	5
+name	Ross
+city	Munich
+```
+In your RPG-Program
+```
+Dcl-S  Id	int(10);  
+Dcl-S  Name	varchar(30);
+Dcl-S  City	varchar(30);
+
 Monitor;
- LocAuth  = %str(getenv('AUTH_TYPE':DsApierr)); // Authentification Type
+ Id = %dec(getKeyVal('id'):10:0); // Authentification Type
  on-error;
 End-Mon;
+Name = getKeyVal('name');
+City = getKeyVal('city'); 
 ```
 
 ### Procedure `getHeader()` generates the HTTP-Header
