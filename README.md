@@ -6,11 +6,11 @@ The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a
 
 Web Services are the cutting edge Technology of the Internet. Millions of Websites based on Web Services like Google, Facebook, Amazon and so on.
 
-## Why IBM i
-The IBM i has all the Technologies for building high speed Web Services and superfast Web Applications out-of-the-box and is the best choice for all your Internet Applications.
-
 ## The Author
 <strong>Rainer Ross</strong> is the developer of the hotel search engine www.myhofi.com - this application is powered by IBM i, built with HTML5, CSS3, JavaScript, Db/2 inMemory, Symmetric Multiprocessing, Watson Content Analytics and runs on the server side with pure free RPG Web Services. myhofi.com was awarded with the <strong>IBM Innovation Award</strong>.
+
+## Why IBM i
+The IBM i has all the Technologies for building high speed Web Services and superfast Web Applications out-of-the-box and is the best choice for all your Internet Applications.
 
 ## Why RPG-Programs runs faster than programs that are written in interpreted languages such as the Net.Data® and PHP scripting languages
 
