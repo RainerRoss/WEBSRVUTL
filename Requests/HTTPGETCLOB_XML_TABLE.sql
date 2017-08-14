@@ -1,6 +1,6 @@
 SELECT x.* FROM
 	XMLTABLE('data/item' PASSING
-	xmlparse(Document SYSTOOLS.HTTPGETCLOB('http://172.16.0.100:8014/myapp/websrv02.pgm?id=1',''))
+	xmlparse(Document SYSTOOLS.HTTPGETCLOB('http://www.myhofi.com/myapp/websrv02.pgm?id=1',''))
 	COLUMNS
 		Id         Integer      path 'id',
 		Name       varchar(40)  path 'name',
