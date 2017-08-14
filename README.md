@@ -71,6 +71,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Write Data to the HTTP-Server `wrtStdout()`
 
 ## How to use in your RPG-Program
+
 ```
 //------------------------------------------------------------------//
 // Main                                                             //
