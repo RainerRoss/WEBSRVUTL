@@ -142,7 +142,7 @@ Log maintenance     7 days
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/HelloWorld.RPGLE to your SRCPF
 * Compile the program `CRTBNDRPG PGM(MYAPP/HELLOWORLD) SRCFILE(MYAPP/QRPGSRC)`
 
-### Some modifications on the HTTP-Server Incstance `MYSERVER` to run Web Services
+### Some modifications on the HTTP-Server Instance `MYSERVER` to run Web Services
 * Open HTTP-Admin from your Browser http://yourIP:2001/HTTPAdmin -> all Servers -> MYSERVER -> Tools -> Edit configuration
 * Insert
 ```
@@ -155,3 +155,4 @@ ScriptAliasMatch /myapp/(.*)  /qsys.lib/myapp.lib/$1
 ```
 * Stop HTTP-Server Instance MYSERVER `ENDTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 * Start HTTP-Server Instance MYSERVER `STRTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
+* Call `HelloWorld` from your browser `http://yourIP:8010/myapp/HelloWorld.pgm`
