@@ -75,7 +75,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Read Data from the HTTP-Server `readStdin()`
 * Write Data to the HTTP-Server `wrtStdout()`
 
-## How to use in your RPG-Program
+## How to use it in your RPG-Program
 Example GET-Request from a business partner to your IBM i  <br />`http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross`
 ```
 //------------------------------------------------------------------//
