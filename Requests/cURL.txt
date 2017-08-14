@@ -1,1 +1,18 @@
+// cURL on IBM i comes with Open Source Technologies 5733OPS Option 7
+// CALL QP2TERM 
+
+// cURL GET-Request
+
+curl -X GET http://www.myhofi.com/myapp/websrv01.pgm?id=1 
+
+// cURL POST-Request with Outfile
+
+curl -X POST http://www.myhofi.com/myapp/websrv01.pgm?id=1 -o /tmp/outfile.json
+
+// cURL POST-Request
+
 curl -X POST http://www.myhofi.com/myapp/websrv01.pgm -d 'id=1' 
+
+// cURL POST-Request with Outfile
+
+curl -X POST http://www.myhofi.com/myapp/websrv01.pgm -d 'id=1' -o /tmp/outfile.json
