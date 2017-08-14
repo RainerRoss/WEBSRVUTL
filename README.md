@@ -96,6 +96,7 @@ End-Mon;
 Example GET-Request `http://www.mycompany/com/myapp/request.rpg?id=5&name=Ross&city=Munich`
 ```
 Key 	Value
+--------------
 id	5
 name	Ross
 city	Munich
