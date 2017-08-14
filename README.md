@@ -136,7 +136,7 @@ Log maintenance     7 days
 * Call `MyFirstApp.html` from your browser `http://yourIP:8010/MyFirstApp.html`
 
 ## Create your first HelloWorld Web Service
-Create a library  `CRTLIB LIB(MYAPP) TEXT('My Web Applications')`
+* Create a library  `CRTLIB LIB(MYAPP) TEXT('My Web Applications')`
 * Create a source physical file `CRTSRCPF FILE(MYAPP/QRPGSRC)`
 * Create a source physical file `CRTSRCPF FILE(MYAPP/QSQLSRC)`
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/HelloWorld.RPGLE to your SRCPF
