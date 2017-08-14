@@ -106,7 +106,7 @@ Example GET-Request from a business partner to your IBM i  <br />`http://www.myc
 LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
 ```
 
-### Procedure `getInput()` reads the input from GET and POST Requests and parse the Input Data in Keys and Values
+### Procedure `getInput()` reads the Input Data from GET and POST Requests and parse the Input Data in Keys and Values
 
 * The maxlength of a key is 128 bytes. The key can be upper case, lower case and mixed case
 * The maxlength of a value is 1,000,000 bytes
