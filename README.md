@@ -61,7 +61,15 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 );
 ```
 
-## Software Prerequisites
+## Super simple to use
+
+### Procedure `getHeader`
+
+* Generates a Text-HTTP Header `Header = getHeader(TEXT)`
+* Generates a JSON-HTTP Header `Header = getHeader()` or `Header = getHeader(JSON)`
+* Generates a XML-HTTP Header `Header = getHeader(XML)`
+
+# Software Prerequisites
 
 License Programs
 
