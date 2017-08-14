@@ -205,3 +205,9 @@ FileETag None
 * Stop HTTP-Server Instance MYSERVER `ENDTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 * Start HTTP-Server Instance MYSERVER `STRTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
 * Call `HelloWorld` from your browser `http://yourIP:8010/myapp/HelloWorld.pgm`
+
+## Create a Web Service to provide JSON-Data
+* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/Customer.sql to your SRCPF in `MYAPP/QSQLSRC`
+* Create the Physical File Customer `RUNSQLSTM SRCFILE(MYAPP/QSQLSRC) SRCMBR(CUSTOMER)` or copy your own Customer Physical File to the Library `MYAPP`
+* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/HelloWorld.RPGLE to your SRCPF
+* Compile the program `CRTBNDRPG PGM(MYAPP/HELLOWORLD) SRCFILE(MYAPP/QRPGSRC)`
