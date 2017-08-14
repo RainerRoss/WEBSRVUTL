@@ -70,6 +70,35 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Read Data from the HTTP-Server `readStdin()`
 * Write Data to the HTTP-Server `wrtStdout()`
 
+## How to use in your RPG-Program
+```
+//------------------------------------------------------------------//
+// Main                                                             //
+//------------------------------------------------------------------//
+  dcl-proc main;                                                  
+                                                                
+  dcl-s   LocHeader   like(GblHeader);         // HTTP-Header     
+  dcl-s   LocId       like(Id);                // Id              
+                                                                
+    LocHeader = getHeader(JSON);               // Get HTTP-Header 
+                                                                
+    getInput();                                // Get Input       
+  
+    monitor;                                                  
+     LocId = %dec(getKeyValue('Id'):10:0);     // Get Id      
+     on-error;                                                
+     LocId = *zero;                                          
+    endmon;
+  
+    LocLen = crtjson(LocJson_p:LocId);	       // Create JSON-Data
+  
+    wrtStdout(%addr(LocHeader:*data):%len(LocHeader):DsApierr);    
+    wrtStdout(LocJson_p:LocLen:DsApierr);      // Send HTTP-Data 
+    
+  end-proc;  
+//------------------------------------------------------------------//
+```
+
 ### Procedure `getenv()` read the HTTP Environment Variables - [Useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
 ```
 LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
