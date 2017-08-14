@@ -78,10 +78,18 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
  dcl-ds DsKeyVal qualified dim(500) inz; 
 ```
 
-### Procedure `getenv()` read the HTTP Environment Variables - [useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
+### Procedure `getenv()` read the HTTP Environment Variables - [Useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
 ```
 LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
 ```
+#### When the Environment Variable is not delivered put the command in a Monitor Statement like this
+```
+Monitor;
+ LocAuth  = %str(getenv('AUTH_TYPE':DsApierr)); // Authentification Type
+ on-error;
+End-Mon;
+```
+
 
 # Software Prerequisites
 
