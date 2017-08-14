@@ -199,6 +199,7 @@ DeflateCompressionLevel 3
 
 Header unset ETag
 FileETag None
+
 #=========================================================================
 ```
 * Stop HTTP-Server Instance MYSERVER `ENDTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
