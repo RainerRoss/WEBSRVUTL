@@ -1,9 +1,11 @@
 # WEBSRVUTL
-Webservice Utilities running on IBM i for providing Webservices and running Webapplications based on AJAX-Requests
+Webservice Utilities running on IBM i for providing Web Services and running Webapplications based on AJAX-Requests
 
 ## Description
 
-The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a fast and easy way to provide webservices powered by IBM i
+The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a fast and easy way to provide Web Services powered by IBM i.
+
+Rainer Ross is the developer of the Hotel Search Engine www.myhofi.com
 
 ## ReadyToClickExamples
 
