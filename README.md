@@ -82,7 +82,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 ```
 LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
 ```
-#### When the Environment Variable is not delivered put the command in a Monitor Statement like this
+#### When the Environment Variable is not delivered then put the command in a Monitor Statement like this
 ```
 Monitor;
  LocAuth  = %str(getenv('AUTH_TYPE':DsApierr)); // Authentification Type
