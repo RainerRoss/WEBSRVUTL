@@ -140,3 +140,17 @@ Log maintenance     7 days
 * Create a source physical file `CRTSRCPF FILE(MYAPP/QRPGSRC)`
 * Create a source physical file `CRTSRCPF FILE(MYAPP/QSQLSRC)`
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/HelloWorld.RPGLE to your SRCPF
+
+### Some modifications on the HTTP-Server Incstance `MYSERVER` to run Web Services
+* Open HTTP-Admin from your Browser http://yourIP:2001/HTTPAdmin -> all Servers -> MYSERVER -> Tools -> Edit configuration
+* Insert
+```
+ScriptAliasMatch /myapp/(.*)  /qsys.lib/myapp.lib/$1
+
+<Directory /qsys.lib/myapp.lib>
+  SetEnv QIBM_CGI_LIBRARY_LIST "MYAPP;WEBSRVUTL;YAJL"
+  Require all granted
+</Directory>
+```
+* Stop HTTP-Server Instance MYSERVER `ENDTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
+* Start HTTP-Server Instance MYSERVER `STRTCPSVR SERVER(*HTTP) HTTPSVR(MYSERVER)`
