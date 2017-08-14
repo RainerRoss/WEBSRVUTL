@@ -119,4 +119,4 @@ Log maintenance     7 days
 
 ## Create your first website
 
-* Open your favorite editor create a new file named MyFirstWebsite.html in the /www/myserver/htdocs folder copy https://github.com/RainerRoss/WEBSRVUTL/blob/master/HTML/MyFirstWebsite.html into the file
+* Open your favorite editor create a new file named `MyFirstWebsite.html` in the `/www/myserver/htdocs` folder and copy https://github.com/RainerRoss/WEBSRVUTL/blob/master/HTML/MyFirstWebsite.html into the `MyFirstWebsite.html` file
