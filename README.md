@@ -1,5 +1,5 @@
 # WEBSRVUTL
-Web Service Utilities running on IBM i for providing <strong>*superfast* Web Services</strong> and running <strong>lightning speed Web Applications</strong> powered by <strong>IBM i</strong> based on AJAX-Requests
+Web Service Utilities running on IBM i for providing <strong>*superfast* Web Services</strong> and running <strong>*lightning speed* Web Applications</strong> powered by <strong>IBM i</strong> based on AJAX-Requests
 
 ## Description
 The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a <strong>*fast and easy way*</strong> to provide Web Services powered by IBM i.
