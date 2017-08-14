@@ -3,7 +3,7 @@ Web Service Utilities running on IBM i for providing *superfast* Web Services an
 
 ## Description
 
-The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a *fast and easy way* to provide Web Services powered by IBM i.
+The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a <strong>*fast and easy way*</strong> to provide Web Services powered by IBM i.
 
 <strong>Rainer Ross</strong> is the developer of the hotel search engine www.myhofi.com - this application is powered by IBM i, built with HTML5, CSS3, JavaScript, Db/2 inMemory, Symmetric Multiprocessing, Watson Content Analytics and runs on the server side with pure free RPG Web Services. myhofi.com was awarded in 2015 with the <strong>IBM Innovation Award</strong>.
 
