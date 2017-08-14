@@ -125,3 +125,13 @@ Log maintenance     7 days
 * Select 8 on `MyFirstWebsite.html` and check the CCSID
 * Change the CCSID `CHGATR OBJ('/www/myserver/htdocs/MyFirstWebsite.html') ATR(*CCSID) VALUE(1208)`
 * Call `MyFirstWebsite.html` from your browser `http://yourIP:8010/MyFirstWebsite.html`
+
+## Create your first app
+
+* Open your favorite editor create a new file named `MyFirstApp.html` in the `/www/myserver/htdocs` folder and copy https://github.com/RainerRoss/WEBSRVUTL/blob/master/HTML/MyFirstApp.html into the `MyFirstMyFirstApp.html` file
+#### Make sure that `MyFirstApp.html` has the CCSID 1208 (UTF-8)
+* Show the files in the folder htdocs `wrklnk '/www/myserver/htdocs/*'`
+* Select 8 on `MyFirstApp.html` and check the CCSID
+* Change the CCSID `CHGATR OBJ('/www/myserver/htdocs/MyFirstApp.html') ATR(*CCSID) VALUE(1208)`
+* Call `MyFirstApp.html` from your browser `http://yourIP:8010/MyFirstApp.html`
+
