@@ -63,11 +63,16 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 
 ## Super simple to use
 
-### Procedure `getHeader`
+### Procedure `getHeader()` generates the HTTP-Header
 
 * Generates a Text-HTTP Header `Header = getHeader(TEXT)`
 * Generates a JSON-HTTP Header `Header = getHeader()` or `Header = getHeader(JSON)`
 * Generates a XML-HTTP Header `Header = getHeader(XML)`
+
+### Procedure `getInput()` reads the input from GET and POST Requests and parse the Parameter String in Keys and Values
+
+* The maxlength of a key is 128 bytes. The key can be upper case, lower case and mixed case
+* The maxlength of a value is 1,000,000 bytes
 
 # Software Prerequisites
 
