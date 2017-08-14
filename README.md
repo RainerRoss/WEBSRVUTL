@@ -143,7 +143,7 @@ Log maintenance     7 days
 * Compile the program `CRTBNDRPG PGM(MYAPP/HELLOWORLD) SRCFILE(MYAPP/QRPGSRC)`
 
 ### Some modifications on the HTTP-Server Instance `MYSERVER` to run Web Services
-* Open HTTP-Admin from your Browser http://yourIP:2001/HTTPAdmin -> all Servers -> MYSERVER -> Tools -> Edit configuration
+* Open HTTP-Admin from your Browser `http://yourIP:2001/HTTPAdmin -> all Servers -> MYSERVER -> Tools -> Edit configuration`
 * Insert 
 ```
 DefaultNetCCSID 1208
