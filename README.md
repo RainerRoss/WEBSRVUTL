@@ -91,12 +91,27 @@ End-Mon;
 ```
 ### Procedure `wrtStdout()` writes Data to the HTTP-Server
 
-The Procedure has three Parameters
+#### The Procedure has three Parameters
 ```
 * Data	      Pointer	
 * Data-Length int(10)
 * Error       Array
 ```
+#### Example Char(256)
+```
+Dcl-S  MyData  char(256) ccsid(*UTF8);
+
+MyData = 'HelloWorld';
+wrtStdout(%addr(MyData):%len(%trimr(MyData)):DsApierr); 
+```
+#### Example VarChar(256)
+```
+Dcl-S  MyData  varchar(256) ccsid(*UTF8);
+
+MyData = 'HelloWorld';
+wrtStdout(%addr(MyData:*data):%len(MyData):DsApierr); 
+```
+
 ## Software Prerequisites
 
 License Programs
