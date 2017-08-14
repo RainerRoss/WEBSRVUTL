@@ -8,6 +8,10 @@ The Library WEBSRVUTL with the Service Program WERSRVUTL gives RPG-Programmers a
 
 ## Why RPG-Programs runs faster than programs that are written in interpreted languages such as the Net.Data® and PHP scripting languages
 
+A major concern with CGI performance on other platforms is the fact that a CGI program is started on each Web client request. This includes additional disk and operating system activity to create the new process (job). Quite often, CGI program initialization, such as connecting to a database management system, also takes some time that adds to the response time users experience with such applications.
+
+The IBM HTTP Server for i takes a different approach. The HTTP Server keeps a pool of HTTP server child processes that is used to run CGI programs. The child processes are not ended after a CGI program is run within the process. In addition, child processes are associated with a user profile and only requests for CGI programs that run under the same user profile associated with an existing child process will be run in the process. 
+
 CGI programs that are created by compiling source code typically run faster than programs that are written in interpreted languages such as the Net.Data® and PHP scripting languages. However, programs that are written in scripting languages tend to be easier to write, maintain, and debug. [Read more](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzaie/rzaieconcgi.htm)
 
 ## ReadyToClickExamples
