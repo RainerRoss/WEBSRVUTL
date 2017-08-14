@@ -76,26 +76,26 @@ Example GET-Request from a business partner to your IBM i  <br />`http://www.myc
 //------------------------------------------------------------------//
 // Main                                                             //
 //------------------------------------------------------------------//
-  dcl-proc main;                                                  
+   dcl-proc main;                                                  
                                                                 
-  dcl-s   LocHeader   like(GblHeader);         // HTTP-Header     
-  dcl-s   LocId       like(Id);                // Id 
-  dcl-s   LocName     like(Name);              // Name     
+   dcl-s   LocHeader   like(GblHeader);          // HTTP-Header     
+   dcl-s   LocId       like(Id);                 // Id 
+   dcl-s   LocName     like(Name);               // Name     
                                                                 
-    LocHeader = getHeader(JSON);               // Get HTTP-Header 
+    LocHeader = getHeader(JSON);                 // Get HTTP-Header 
                                                                 
-    getInput();                                // Get Input       
+    getInput();                                  // Get Input       
   
     monitor;                                                  
-     LocId = %dec(getKeyValue('Id'):10:0);     // Get Id      
+     LocId = %dec(getKeyValue('Id'):10:0);       // Get Id      
      on-error;                                         
     endmon;
-    LocName = getKeyValue('name');             // Get Name
+    LocName = getKeyValue('name');               // Get Name
     
-    LocLen  = crtjson(LocJson_p:LocId:LocName); // Create JSON-Data
+    LocLen  = crtjson(LocJson_p:LocId:LocName);  // Create JSON-Data
   
     wrtStdout(%addr(LocHeader:*data):%len(LocHeader):DsApierr);    
-    wrtStdout(LocJson_p:LocLen:DsApierr);      // Send HTTP-Data 
+    wrtStdout(LocJson_p:LocLen:DsApierr);        // Send HTTP-Data 
     
   end-proc;  
 //------------------------------------------------------------------//
