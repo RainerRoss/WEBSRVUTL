@@ -67,8 +67,8 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Get Input from HTTP-Server `getInput()`
 * Get KeyValue from Query-String `getKeyVal()`
 * Create HTTP-Header `getHeader()`
-* Read Data from the HTTP-Server`readStdin()`
-* Write Data to the HTTP-Server`wrtStdout()`
+* Read Data from the HTTP-Server `readStdin()`
+* Write Data to the HTTP-Server `wrtStdout()`
 
 ### Procedure `getHeader()` generates the HTTP-Header
 
