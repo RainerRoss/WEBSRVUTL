@@ -70,7 +70,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 
 * Read the HTTP Environment Variables `getenv()`
 * Get Input from HTTP-Server `getInput()`
-* Get KeyValue from Input-Data `getKeyVal()`
+* Get KeyValue from Input-Data `getKeyValue()`
 * Create HTTP-Header `getHeader()`
 * Read Data from the HTTP-Server `readStdin()`
 * Write Data to the HTTP-Server `wrtStdout()`
@@ -127,7 +127,7 @@ Monitor;
 End-Mon;
 ```
 
-### Procedure `getKeyVal()` get KeyValue from Input-Data 
+### Procedure `getKeyValue()` get KeyValue from Input-Data 
 
 Example GET-Request `http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross&city=Munich`
 * `?` -> Starts the Query_String -> the Input Parameters
@@ -147,11 +147,11 @@ Dcl-S  Name	varchar(30);
 Dcl-S  City	varchar(30);
 
 Monitor;
- Id = %dec(getKeyVal('id'):10:0); // Authentification Type
+ Id = %dec(getKeyValue('id'):10:0); // Authentification Type
  on-error;
 End-Mon;
-Name = getKeyVal('name');
-City = getKeyVal('city'); 
+Name = getKeyValue('name');
+City = getKeyValue('city'); 
 ```
 
 ### Procedure `getHeader()` generates the HTTP-Header
