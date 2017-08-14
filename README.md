@@ -96,7 +96,7 @@ Non-License Software (open source)
 
 ## Create a new HTTP-Server Instance `MYSERVER`
 
-* Open your browser and start the HTTP-Admin: http://yourIP:2001/HTTPAdmin
+* Open your browser and start the IBM i HTTP-Admin: http://yourIP:2001/HTTPAdmin
 * Create the new HTTP-Server Instance
 ```
 Server name:        MYSERVER
