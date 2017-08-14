@@ -89,8 +89,14 @@ Monitor;
  on-error;
 End-Mon;
 ```
+### Procedure `wrtStdout()` writes Data to the HTTP-Server
 
-
+The Procedure hat three Parameters
+```
+* Data	      Pointer	
+* Data-Length int(10)
+* Error       Array
+```
 ## Software Prerequisites
 
 License Programs
