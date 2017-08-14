@@ -94,8 +94,8 @@ End-Mon;
 ### Procedure `getKeyVal()` get KeyValue from Input-Data 
 
 Example GET-Request `http://www.mycompany/com/myapp/request.rpg?id=5&name=Ross&city=Munich`
-* ? -> Starts the Query_String -> the Input Parameters
-* & -> Separator Key=Value&Key=Value
+* `?` -> Starts the Query_String -> the Input Parameters
+* `&` -> Separator Key=Value&Key=Value
 
 ```
 Key 	Value
