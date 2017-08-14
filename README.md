@@ -140,6 +140,7 @@ Log maintenance     7 days
 * Create a source physical file `CRTSRCPF FILE(MYAPP/QRPGSRC)`
 * Create a source physical file `CRTSRCPF FILE(MYAPP/QSQLSRC)`
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/HelloWorld.RPGLE to your SRCPF
+* Add MYAPP and WEBSRVUTL to your Library List `ADDLIBLE LIB(MYAPP) POSITION(*LAST) ADDLIBLE LIB(WEBSRVUTL) POSITION(*LAST)`
 * Compile the program `CRTBNDRPG PGM(MYAPP/HELLOWORLD) SRCFILE(MYAPP/QRPGSRC)`
 
 ### Some modifications on the HTTP-Server Instance `MYSERVER` to run Web Services
@@ -209,6 +210,6 @@ FileETag None
 ## Create a Web Service to provide JSON-Data
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/Customer.sql to your SRCPF in `MYAPP/QSQLSRC`
 * Create the Physical File Customer `RUNSQLSTM SRCFILE(MYAPP/QSQLSRC) SRCMBR(CUSTOMER)` and fill this File with data or copy your own Customer Physical File to the Library `MYAPP`
-* Add MYAPP, WEBSRVUTL and YAJL to your Library List `ADDLIBLE LIB(MYAPP) POSITION(*LAST)`
+* Add MYAPP, WEBSRVUTL and YAJL to your Library List `ADDLIBLE LIB(MYAPP) POSITION(*LAST) ADDLIBLE LIB(WEBSRVUTL) POSITION(*LAST) ADDLIBLE LIB(YAJL) POSITION(*LAST)`
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV01.RPGLE to your SRCPF in `MYAPP/QRPGSRC`
 * Compile the program `CRTBNDRPG PGM(MYAPP/WEBSRV01) SRCFILE(WEBSRV01/QRPGSRC)`
