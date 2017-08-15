@@ -290,7 +290,7 @@ Log maintenance     7 days
 ```
 DefaultNetCCSID 1208
 ```
-* Check the IBM i CCSID `DSPSYSVAL QCCSID` when the CCSID is 65535 then insert the following line depending on your CCSID e.g. US = 37, DE = 1141
+* Check your IBM i CCSID `DSPSYSVAL QCCSID` when the CCSID is 65535 then insert the following line depending on your CCSID e.g. US = 37, DE = 1141
 ```
 DefaultFsCCSID 37
 ```
