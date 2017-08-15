@@ -158,7 +158,7 @@ Dcl-S  Name	varchar(30);
 Dcl-S  City	varchar(30);
 
 Monitor;
- Id = %dec(getKeyValue('id'):10:0); // Authentification Type
+ Id = %dec(getKeyValue('id'):10:0); // Id
  on-error;
 End-Mon;
 Name = getKeyValue('name');
