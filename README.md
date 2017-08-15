@@ -137,6 +137,7 @@ End-Mon;
 ```
  dcl-ds DsKeyVal qualified dim(500) inz; 
 ```
+* Create the Binding Directory and the Service Program `CALL PGM(WEBSRVUTL/WEBSRVUTLC)`
 
 ### Procedure `getKeyValue()` get KeyValue from Input-Data 
 
