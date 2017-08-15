@@ -121,6 +121,13 @@ Example GET-Request from a business partner to your IBM i  <br />`http://www.myc
 ```
 LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
 ```
+#### When the Environment Variable is not delivered then put the command in a Monitor Statement like this
+```
+Monitor;
+ LocAuth  = %str(getenv('AUTH_TYPE':DsApierr)); // Authentification Type
+ on-error;
+End-Mon;
+```
 
 ### Procedure `getInput()` reads the Input Data from GET and POST Requests and parse the Input Data in Keys and Values
 
@@ -129,13 +136,6 @@ LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
 * The number of variables is 100, when you need more variables then change https://github.com/RainerRoss/WEBSRVUTL/blob/master/QCPYSRC/WEBSRVUTL.RPGLE in line 59 to your own number of needed variables like this
 ```
  dcl-ds DsKeyVal qualified dim(500) inz; 
-```
-#### When the Environment Variable is not delivered then put the command in a Monitor Statement like this
-```
-Monitor;
- LocAuth  = %str(getenv('AUTH_TYPE':DsApierr)); // Authentification Type
- on-error;
-End-Mon;
 ```
 
 ### Procedure `getKeyValue()` get KeyValue from Input-Data 
