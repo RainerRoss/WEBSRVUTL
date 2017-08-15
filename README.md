@@ -133,11 +133,11 @@ End-Mon;
 
 * The maxlength of a key is 128 bytes. The key can be upper case, lower case and mixed case
 * The maxlength of a value is 1,000,000 bytes
-* The number of variables is 100, when you need more variables then change https://github.com/RainerRoss/WEBSRVUTL/blob/master/QCPYSRC/WEBSRVUTL.RPGLE in line 59 to your own number of needed variables like this
+* The number of variables is 100, when you need more variables then change https://github.com/RainerRoss/WEBSRVUTL/blob/master/QCPYSRC/WEBSRVUTL.RPGLE in line 59 to your own number of needed variables like this and create the Binding Directory and the Service Program `CALL PGM(WEBSRVUTL/WEBSRVUTLC)`
 ```
  dcl-ds DsKeyVal qualified dim(500) inz; 
 ```
-* Create the Binding Directory and the Service Program `CALL PGM(WEBSRVUTL/WEBSRVUTLC)`
+* 
 
 ### Procedure `getKeyValue()` get KeyValue from Input-Data 
 
