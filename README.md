@@ -158,7 +158,7 @@ Dcl-S  Name	varchar(30);
 Dcl-S  City	varchar(30);
 
 Monitor;
- Id = %dec(getKeyValue('id'):10:0); // Id
+ Id = %dec(getKeyValue('id'):10:0);
  on-error;
 End-Mon;
 Name = getKeyValue('name');
