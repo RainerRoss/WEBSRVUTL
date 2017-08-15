@@ -43,7 +43,7 @@ Providing JSON www.myhofi.com/myapp/websrv01.pgm?id=1 Link to [Sourcecode](https
 }
 ```
 
-Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 Link to [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.RPGLE)
+Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 Link to [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.SQLRPGLE)
 ```
 <data>
 	<item>
@@ -360,6 +360,6 @@ FileETag None
 * Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/Customer.sql to your SRCPF in `MYAPP/QSQLSRC`
 * Create the Physical File Customer `RUNSQLSTM SRCFILE(MYAPP/QSQLSRC) SRCMBR(CUSTOMER)` and fill this File with data or copy your own Customer Physical File to the Library `MYAPP`
 * Add MYAPP, WEBSRVUTL and YAJL to your Library List `ADDLIBLE LIB(MYAPP) POSITION(*LAST) ADDLIBLE LIB(WEBSRVUTL) POSITION(*LAST) ADDLIBLE LIB(YAJL) POSITION(*LAST)`
-* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.RPGLE to your SRCPF in `MYAPP/QRPGSRC`
-* Compile the program `CRTBNDRPG PGM(MYAPP/WEBSRV02) SRCFILE(WEBSRV02/QRPGSRC)`
+* Copy the file https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.SQLRPGLE to your SRCPF in `MYAPP/QRPGSRC`
+* Compile the program `CRTSQLRPGI PGM(MYAPP/WEBSRV02) SRCFILE(WEBSRV02/QRPGSRC)`
 * Call `WEBSRV02` from your browser `http://yourIP:8010/myapp/Websrv02.pgm?id=1`
