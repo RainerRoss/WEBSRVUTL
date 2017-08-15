@@ -167,9 +167,9 @@ City = getKeyValue('city');
 
 ### Procedure `getHeader()` generates the HTTP-Header
 
-* Generates a Text-HTTP Header `Header = getHeader(TEXT)`
-* Generates a JSON-HTTP Header `Header = getHeader()` or `Header = getHeader(JSON)`
-* Generates a XML-HTTP Header `Header = getHeader(XML)`
+* Generates a Text HTTP Header `Header = getHeader(TEXT)`
+* Generates a JSON HTTP Header `Header = getHeader()` or `Header = getHeader(JSON)`
+* Generates a XML  HTTP Header `Header = getHeader(XML)`
 
 
 ### Procedure `wrtStdout()` writes Data to the HTTP-Server
