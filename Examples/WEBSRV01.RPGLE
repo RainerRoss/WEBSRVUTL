@@ -118,8 +118,8 @@
               if %found(customer);
                  crtitem();
               endif;
-            other;                                    // Kunde = *zero
-              setll *start customer;                   // alle Kunden lesen
+            other;                                    // Id = *zero
+              setll *start customer;                  // Read all customers
               dou %eof(customer);
                 read customerr;
                 if not %eof(customer);
