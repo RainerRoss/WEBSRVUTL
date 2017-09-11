@@ -5,7 +5,7 @@
       // Web Service Customer in JSON                                     //
       //                                                                  //
       //-----------------                                                 //
-      // R.Ross 08.2017 *                                                 //
+      // R.Ross 09.2017 *                                                 //
       //------------------------------------------------------------------//
       // Files                                                            //
       //------------------------------------------------------------------//
@@ -21,13 +21,11 @@
       /include yajl/qrpglesrc,yajl_h                  // JSON Utilities
 
       //------------------------------------------------------------------//
-      // Table Data                                                       //
+      // Variables                                                        //
       //------------------------------------------------------------------//
 
-         dcl-ds  TbData      qualified;               // DataTable
-                  Success    ind inz(*on);            // Success
-                  Errmsg     char(80);                // ErrorMessage
-         end-ds;
+         dcl-s   GblErrmsg   varchar(500);
+         dcl-c   GblStatusOk Const(200);
 
       //------------------------------------------------------------------//
       // Processing                                                       //
@@ -44,11 +42,7 @@
          dcl-s   LocJson_p   pointer;                 // JSON-Pointer
          dcl-s   LocHeader   varchar(256);            // HTTP-Header
          dcl-s   LocLen      uns(10);                 // Length
-         dcl-s   LocId       like(id);                // Id
-
-           reset TbData;                              // JSON-Table
-
-           LocHeader = getheader(JSON);               // Get HTTP-Header
+         dcl-s   LocId       like(Id);                // Id
 
            getInput();                                // Get Input
 
@@ -58,48 +52,29 @@
              LocId = *zero;
            endmon;
 
-           LocLen = crtjson(LocJson_p:LocId);
-
-           wrtStdout(%addr(LocHeader:*data):%len(LocHeader):DsApierr);
-           wrtStdout(LocJson_p:LocLen:DsApierr);      // Send HTTP-Data
+           yajl_genopen(*on);
+            crtjson(LocId);
+            yajl_writeStdout(GblStatusOk:GblErrMsg);
+           yajl_genclose();
 
          end-proc;
       //------------------------------------------------------------------//
       // Create JSON-Data                                                 //
       //------------------------------------------------------------------//
-         dcl-proc crtjson export;
-         dcl-pi *n           like(LocLen);            // JSON-Length
-                 PiJson_p    pointer;                 // JSON-Pointer
+         dcl-proc crtjson;
+         dcl-pi *n;
                  PiId        like(Id) const;          // Id
          end-pi;
 
-         dcl-s   LocLen      int(10);                 // Data-Length
-         dcl-s   LocRc       int(10);                 // ReturnCode
-         dcl-s   LocBuf      pointer;                 // Buffer
-         dcl-s   LocBuflen   uns(10);                 // Buffer-Length
-
-           dealloc(n) PiJson_p;                       // JSON-Pointer
-
-           yajl_genopen(*on);                         // Pretty-Code
-
            yajl_beginobj();
-           yajl_addbool('success':TbData.Success);
-           yajl_addchar('errmsg' :%trim(TbData.Errmsg));
+            yajl_addbool('success':*on);
+            yajl_addchar('errmsg' :%trim(GblErrMsg));
 
-           readCustomer(PiId);                        // Read Customer
+            yajl_beginarray('items');                 // Items
+             readCustomer(PiId);                      // Read Customer
+            yajl_endarray();
 
            yajl_endobj();
-
-           LocRc = yajl_getBuf(LocBuf:LocBuflen);     // Get JSON Buffer
-
-           if LocBuf <> *null and LocBuflen > *zero;
-              PiJson_p = %alloc(LocBuflen * 2);       // Alloc Pointer
-              LocRc = yajl_copybuf(1208:PiJson_p:LocBuflen * 2:LocLen);
-           endif;
-
-           yajl_genclose();
-
-           return LocLen;                             // JSON-Length
 
          end-proc;
       //------------------------------------------------------------------//
@@ -110,11 +85,9 @@
                  PiId        like(Id) const;          // Id
          end-pi;
 
-           yajl_beginarray('items');                  // Items
-
            select;
             when PiId > *zero;                        // Id > *zero
-              chain (PiId) customerr;                 // Read customer
+              chain (PiId) customerr;                 // Read one customer
               if %found(customer);
                  crtitem();
               endif;
@@ -127,8 +100,6 @@
                 endif;
               enddo;
            endsl;
-
-           yajl_endarray();
 
          end-proc;
       //------------------------------------------------------------------//
@@ -150,4 +121,4 @@
            yajl_endobj();
 
          end-proc;
-      //------------------------------------------------------------------//       
+      //------------------------------------------------------------------// 
