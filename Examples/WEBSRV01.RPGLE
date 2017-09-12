@@ -39,9 +39,6 @@
       //------------------------------------------------------------------//
          dcl-proc main;
 
-         dcl-s   LocJson_p   pointer;                 // JSON-Pointer
-         dcl-s   LocHeader   varchar(256);            // HTTP-Header
-         dcl-s   LocLen      uns(10);                 // Length
          dcl-s   LocId       like(Id);                // Id
 
            getInput();                                // Get Input
