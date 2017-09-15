@@ -61,7 +61,7 @@ Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 Link to [Sourcecode](https:
 </data>
 ```
 
-Web Application with AJAX-Request to the JSON-Webservice www.myhofi.com/devhtm/websrv03.html
+Web Application with AJAX-Request to the JSON-Webservice www.myhofi.com/devhtm/websrv04.html
 
 ![capture20170813131922025](https://user-images.githubusercontent.com/10383523/29249116-26fb77dc-802a-11e7-8545-9011d20df3f0.png)
 
