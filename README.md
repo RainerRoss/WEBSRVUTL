@@ -93,8 +93,7 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
 // Main                                                             //
 //------------------------------------------------------------------//
    dcl-proc main;                                                  
-                                                                
-   dcl-s   LocHeader   like(GblHeader);          // HTTP-Header     
+   
    dcl-s   LocId       like(Id);                 // Id 
    dcl-s   LocName     like(Name);               // Name     
                                                                 
