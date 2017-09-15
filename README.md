@@ -108,10 +108,10 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
     endmon;
     LocName = getKeyValue('name');               // Get Name
     
-    LocLen  = crtjson(LocJson_p:LocId:LocName);  // Create JSON-Data
-  
-    wrtStdout(%addr(LocHeader:*data):%len(LocHeader):DsApierr);    
-    wrtStdout(LocJson_p:LocLen:DsApierr);        // Send HTTP-Data 
+    yajl_genopen(*on);
+      crtjson(LocId);
+      yajl_writeStdout(GblStatusOk:GblErrMsg);
+    yajl_genclose();
     
   end-proc;  
 //------------------------------------------------------------------//
