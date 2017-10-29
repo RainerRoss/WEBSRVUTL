@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>MyFirstApp</title>
+		<link rel="stylesheet" href="http://cdn.webix.com/edge/webix.css" type="text/css">
+	</head>
+	<body>
+		<script type="text/javascript" src="http://cdn.webix.com/edge/webix.js"></script>
+		<script>
+
+//--------------------------------------------------------------------------//
+// Main		      															//
+//--------------------------------------------------------------------------//
+
+webix.ready(function(){
+	webix.ui({
+		view: "datatable",
+		id: "myTable",
+		autoConfig: true
+	});
+	webix.extend($$("myTable"), webix.ProgressBar);
+	readData("myTable");
+});
+
+//--------------------------------------------------------------------------//
+// Read Data																//
+//--------------------------------------------------------------------------//
+
+function readData(tableId) {
+	$$(tableId).showProgress({hide:true});
+	webix.ajax().post("/myapp/websrv01.pgm", {id:0},
+		function(text, data) {
+			$$(tableId).clearAll();
+			$$(tableId).parse(data.json().items);
+			$$(tableId).setPage(0);
+			$$(tableId).hideProgress();
+		}
+	);
+}
+
+		</script>
+	</body>
+</html>
