@@ -205,7 +205,7 @@
                    crlf;                                                        
            endif;                                                               
                                                                                 
-           return LocHeader;                          // HTTP-Header            
+           return LocHeader;                          // HTTP-Header             
                                                                                 
          end-proc;                                                              
       //------------------------------------------------------------------//     
