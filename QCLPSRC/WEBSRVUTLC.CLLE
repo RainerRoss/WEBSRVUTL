@@ -13,7 +13,7 @@
    DCL        VAR(&SRVPGM) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)                 
    DCL        VAR(&BNDDIR) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)                 
    DCL        VAR(&TEXT)   TYPE(*CHAR) LEN(80) +                                
-                           VALUE('Webservice Utilities V1.1')                   
+                           VALUE('Webservice Utilities V1.2')                   
                                                                                 
    MONMSG     MSGID(CPF0000)                                                    
                                                                                 
