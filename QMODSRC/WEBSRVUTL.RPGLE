@@ -1,7 +1,7 @@
            ctl-opt nomain alloc(*teraspace);                                      
       //------------------------------------------------------------------//    
       //                                                                  //    
-      // Webservice Utilities V1.2                                        //    
+      // Webservice Utilities V1.3                                        //    
       //                                                                  //    
       //-----------------                                                 //    
       // R.Ross 08.2017 *                                                 //    
@@ -59,7 +59,7 @@
          dcl-s   LocQrystr   like(GblQrystr);         // QueryString            
          dcl-s   LocPos1     uns(10);                 // Position 1             
          dcl-s   LocPos2     uns(10);                 // Position 2             
-         dcl-s   LocData     varchar(256);            // Data                   
+         dcl-s   LocData     like(GblQrystr);         // Data                   
          dcl-s   LocLen      uns(10);                 // Length                 
                                                                                 
            LocQrystr = PiQrystr + '&';                // QueryString + '&'      
