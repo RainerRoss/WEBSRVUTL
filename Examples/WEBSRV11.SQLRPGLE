@@ -2,10 +2,10 @@
                  main(main) actgrp('WEBSRV11') bnddir('WEBSRVUTL');                                                     
       //------------------------------------------------------------------//                                            
       //                                                                  //                                            
-      // Webservice Kunden im JSON-Format mit JSON_ARRAY                  //                                            
+      // Webservice Customer JSON-Format with JSON_ARRAYAGG               //                                            
       //                                                                  //                                            
       //-----------------                                                 //                                            
-      // R.Ross 10.2017 *                                                 //                                            
+      // R.Ross 03.2018 *                                                 //                                            
       //------------------------------------------------------------------//                                            
       // Prototypes                                                       //                                            
       //------------------------------------------------------------------//                                            
@@ -18,6 +18,13 @@
       //------------------------------------------------------------------//                                            
                                                                                                                         
          dcl-ds  DsCustomer  extname('CUSTOMER') qualified alias end-ds;                                                
+                                                                                                                        
+      //------------------------------------------------------------------//                                            
+      // SQL-Options                                                      //                                            
+      //------------------------------------------------------------------//                                            
+                                                                                                                        
+         exec sql set option datfmt=*iso, timfmt=*iso, commit=*none,                                                    
+                             decmpt=*period, closqlcsr=*endactgrp;                                                      
                                                                                                                         
       //------------------------------------------------------------------//                                            
       // Array Input-Data                                                 //                                            
@@ -36,12 +43,9 @@
       //------------------------------------------------------------------//                                            
       // Main                                                             //                                            
       //------------------------------------------------------------------//                                            
-         dcl-proc main;                                                                                                  
+         dcl-proc main;                                                                                                 
                                                                                                                         
          dcl-s   LocHeader   like(GblHeader);         // HTTP-Header                                                    
-                                                                                                                        
-           exec sql set option datfmt=*iso, timfmt=*iso, commit=*none,                                                  
-                               decmpt=*period, closqlcsr=*endactgrp;                                                    
                                                                                                                         
            LocHeader = getHeader();                   // Get HTTP-Header                                                
                                                                                                                         
@@ -126,4 +130,4 @@
              from myapp.customer;                                                                                       
                                                                                                                         
          end-proc;                                                                                                      
-      //------------------------------------------------------------------//                                             
+      //------------------------------------------------------------------//                                               
