@@ -134,7 +134,7 @@ End-Mon;
 * The maxlength of a value is 1,000,000 bytes
 * The maximal number of variables is 1000, when you need more variables then change https://github.com/RainerRoss/WEBSRVUTL/blob/master/QCPYSRC/WEBSRVUTL.RPGLE in line 59 to your own number of needed variables and create the Binding Directory and the Service Program `CALL PGM(WEBSRVUTL/WEBSRVUTLC)`
 ```
- dcl-ds DsKeyVal qualified dim(500) inz; 
+ dcl-ds DsKeyVal qualified dim(1000) inz; 
 ```
 * 
 
