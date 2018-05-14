@@ -1,46 +1,47 @@
-/*********************************************************************/         
-/*                                                                   */         
-/* CREATE WEBSRVUTL Binding Directory and Service Program            */         
-/*                                                                   */         
-/******************                                                  */         
-/* R.ROSS 08.2017 *                                                  */         
-/*********************************************************************/         
-                                                                                
-   PGM                                                                          
-                                                                                
-   DCL        VAR(&SRCLIB) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)                 
-   DCL        VAR(&OBJLIB) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)                 
-   DCL        VAR(&SRVPGM) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)                 
-   DCL        VAR(&BNDDIR) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)                 
-   DCL        VAR(&TEXT)   TYPE(*CHAR) LEN(80) +                                
-                           VALUE('Webservice Utilities V1.3')                   
-                                                                                
-   MONMSG     MSGID(CPF0000)                                                    
-                                                                                
-/*********************************************************************/         
-/* MAIN                                                              */         
-/*********************************************************************/         
-                                                                                
-   CRTRPGMOD  MODULE(&OBJLIB/&SRVPGM) +                                         
-               SRCFILE(&SRCLIB/QMODSRC)                                         
-                                                                                
-   CRTSRVPGM  SRVPGM(&OBJLIB/&SRVPGM) +                                         
-               MODULE(&OBJLIB/&SRVPGM) +                                        
-               EXPORT(*ALL) TEXT(&TEXT) +                                       
-               BNDSRVPGM((QHTTPSVR/QZHBCGI)(QSYSDIR/QAXIS10HT)) +               
-               ACTGRP(*CALLER)                                                  
-                                                                                
-   DLTBNDDIR  BNDDIR(&OBJLIB/&BNDDIR)                                           
-   CRTBNDDIR  BNDDIR(&OBJLIB/&BNDDIR) TEXT(&TEXT)                               
-                                                                                
-   ADDBNDDIRE BNDDIR(&OBJLIB/&BNDDIR) OBJ((&OBJLIB/&SRVPGM *SRVPGM))            
-   ADDBNDDIRE BNDDIR(&OBJLIB/&BNDDIR) OBJ((QHTTPSVR/QZHBCGI *SRVPGM))           
-   ADDBNDDIRE BNDDIR(&OBJLIB/&BNDDIR) OBJ((QSYSDIR/QAXIS10HT *SRVPGM))          
-                                                                                
-   DLTMOD     MODULE(&OBJLIB/WEBSRVUTL)                                         
-                                                                                
-/*********************************************************************/         
-/* END                                                               */         
-/*********************************************************************/         
-   END:      ENDPGM                                                            
-/*********************************************************************/          
+/*********************************************************************/
+/*                                                                   */
+/* CREATE WEBSRVUTL Binding Directory and Service Program            */
+/*                                                                   */
+/******************                                                  */
+/* R.ROSS 08.2017 *                                                  */
+/*********************************************************************/
+
+   PGM
+
+   DCL        VAR(&SRCLIB) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)
+   DCL        VAR(&OBJLIB) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)
+   DCL        VAR(&SRVPGM) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)
+   DCL        VAR(&BNDDIR) TYPE(*CHAR) LEN(10) VALUE(WEBSRVUTL)
+   DCL        VAR(&TEXT)   TYPE(*CHAR) LEN(80) +
+                           VALUE('Webservice Utilities V1.3')
+
+   MONMSG     MSGID(CPF0000)
+
+/*********************************************************************/
+/* MAIN                                                              */
+/*********************************************************************/
+
+   CRTRPGMOD  MODULE(&OBJLIB/&SRVPGM) +
+               SRCFILE(&SRCLIB/QMODSRC) +
+               DBGVIEW(*SOURCE)
+
+   CRTSRVPGM  SRVPGM(&OBJLIB/&SRVPGM) +
+               MODULE(&OBJLIB/&SRVPGM) +
+               EXPORT(*ALL) TEXT(&TEXT) +
+               BNDSRVPGM((QHTTPSVR/QZHBCGI)(QSYSDIR/QAXIS10HT)) +
+               ACTGRP(*CALLER)
+
+   DLTBNDDIR  BNDDIR(&OBJLIB/&BNDDIR)
+   CRTBNDDIR  BNDDIR(&OBJLIB/&BNDDIR) TEXT(&TEXT)
+
+   ADDBNDDIRE BNDDIR(&OBJLIB/&BNDDIR) OBJ((&OBJLIB/&SRVPGM *SRVPGM))
+   ADDBNDDIRE BNDDIR(&OBJLIB/&BNDDIR) OBJ((QHTTPSVR/QZHBCGI *SRVPGM))
+   ADDBNDDIRE BNDDIR(&OBJLIB/&BNDDIR) OBJ((QSYSDIR/QAXIS10HT *SRVPGM))
+
+   DLTMOD     MODULE(&OBJLIB/WEBSRVUTL)
+
+/*********************************************************************/
+/* ENDE                                                              */
+/*********************************************************************/
+   ENDE:      ENDPGM
+/*********************************************************************/ 
