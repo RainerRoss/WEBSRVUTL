@@ -56,7 +56,7 @@
                                                                                 
          dcl-s   KeyCounter  uns(10);                                           
                                                                                 
-         dcl-ds  DsKeyVal    qualified dim(5000) inz;                            
+         dcl-ds  DsKeyVal    qualified dim(1000) inz;                            
                   Key        like(GblKey);                                      
                   Value      pointer;                                           
                   Length     uns(10);                                           
