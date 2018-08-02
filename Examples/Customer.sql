@@ -8,7 +8,7 @@
 
   create or replace table myapp.customer (
          Id         int           not null default,
-         Name       char(25)      not null default,
+         Name       char(25)      not null default CCSID 1208,
          Country    char(02)      not null default,
          ZIP        char(05)      not null default,
          City       char(25)      not null default,
