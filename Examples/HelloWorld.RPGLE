@@ -22,7 +22,7 @@
          dcl-s   LocText     varchar(20) ccsid(*utf8);// Text
 
            LocHeader = getHeader(TEXT);               // Get HTTP-Header
-           LocText   = 'Hello World';                 // Text
+           LocText   = 'HelloIBMiWorld';              // Text
 
            wrtStdout(%addr(LocHeader:*data):%len(LocHeader):DsApierr);
            wrtStdout(%addr(LocText:*data):%len(LocText):DsApierr);
