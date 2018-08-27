@@ -23,7 +23,7 @@
          dcl-s   LocText     varchar(20);             // Text
 
            LocHeader = getHeader(TEXT);               // Get HTTP-Header
-           LocText   = 'Hello World';                 // Text
+           LocText   = 'HelloIBMiWorld';              // Text
 
       // Determine your Source CCSID US = 37, DE = 1141
 
