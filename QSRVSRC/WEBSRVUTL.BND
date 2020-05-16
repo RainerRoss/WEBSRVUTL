@@ -1,0 +1,17 @@
+/*********************************************************************/
+/*                                                                   */
+/* Binding Webservice Utilities                                      */
+/*                                                                   */
+/******************                                                  */
+/* R.ROSS 05.2020 *                                                  */
+/*********************************************************************/
+
+   STRPGMEXP PGMLVL(*CURRENT) LVLCHK(*YES) SIGNATURE('WEBSRVUTL001')
+      EXPORT SYMBOL('GETHEADER')
+      EXPORT SYMBOL('GETINPUT')
+      EXPORT SYMBOL('GETKEYVALUE')
+      EXPORT SYMBOL('ENCBASE64')
+      EXPORT SYMBOL('WRITESTDOUT')
+   ENDPGMEXP
+
+/*********************************************************************/ 
