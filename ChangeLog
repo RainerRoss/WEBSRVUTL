@@ -10,7 +10,7 @@ Changes to version 1.4 from 1.3:
 Changes to version 1.5 from 1.4:
   - WEBSRVUTLC - Service Program and Binding Directory V1.5
     CRTSRVPGM - new Parameter STGMDL(*INHERIT)
-    CRTSRVPGM - new binding source WEBSRVUTL.BND
+    CRTSRVPGM - new Binding source WEBSRVUTL.BND
   - new Procedure encBase64    (Encode String to Base64)
   - new Procedure decBase64bin (Decode Base64 to String)
   - /copy websrvutl/qcpysrc,apierr no longer necessary in programs
