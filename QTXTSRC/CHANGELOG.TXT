@@ -1,19 +1,19 @@
 
-
 Changes to version 1.4 from 1.3:
 
   - new Procedure writeStdOut(Data_p:DataLength:Type);
         Data_p     = (input)           Data-Pointer
         DataLength = (input)           length of data
-        DataType   = (input, optional) JSON, XML, TEXT (JSON = Default)
+        Type       = (input, optional) JSON, XML, TEXT (JSON = Default)
+
+  - writeStdOut() includes now the getHeader() procedure - look at example WEBSRV11
 
   - change getInput(Type) Procedure with Parameter Type to manage JSON, XML and TEXT-data
+        Type = (input, optional) JSON, XML, TEXT (JSON = Default)
+
         getInput() or getInput(TEXT) receive GET/POST with TEXT-data
         WBInput = getInput(JSON)     receive POST with JSON-data
         WBInput = getInput(XML)      receive POST with XML-data
-
-  - writeStdOut() includes the getHeader() Procedure - look at example WEBSRV11
-        DataType = (input, optional) JSON, XML, TEXT (JSON = Default)
 
 
 Changes to version 1.5 from 1.4:
