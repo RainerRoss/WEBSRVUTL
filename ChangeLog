@@ -3,7 +3,7 @@ Changes to version 1.4 from 1.3:
 
   - new Procedure writeStdOut(Data_p:DataLength:Type);
         Data_p     = (input)           Data-Pointer
-        DataLength = (input)           length of Data
+        DataLength = (input)           length of data
         DataType   = (input, optional) JSON, XML, TEXT (JSON = Default)
 
   - change getInput(Type) Procedure with Parameter Type to manage JSON, XML and TEXT-data
@@ -17,12 +17,12 @@ Changes to version 1.4 from 1.3:
 
 Changes to version 1.5 from 1.4:
 
-  - new WEBSRVUTL/QSRVSRC - SRCPF for Binding Source
-  - new WEBSRVUTL.BND - Binding Source
-  - change WEBSRVUTLC - Service Program and Binding Directory V1.5
-  - change CRTSRVPGM - new Parameter STGMDL(*INHERIT)
+  - new WEBSRVUTL/QSRVSRC - SRCPF for binding source
+  - new WEBSRVUTL.BND - binding source
+  - change WEBSRVUTLC - service program and binding directory V1.5
+  - change CRTSRVPGM - new parameter STGMDL(*INHERIT)
   - change CRTSRVPGM - new binding source WEBSRVUTL.BND
-  - new encBase64    Procedure (Encode String to Base64)
-  - new decBase64bin Procedure (Decode Base64 to String)
+  - new encBase64    procedure (Encode String to Base64)
+  - new decBase64bin procedure (Decode Base64 to String)
   - /copy websrvutl/qcpysrc,apierr no longer necessary in programs and is now a part from
-    /copy websrvutl/qcpysrc,websrvutl
+    /copy websrvutl/qcpysrc,websrvutl 
