@@ -1,4 +1,4 @@
-         ctl-opt dftactgrp(*no) alloc(*teraspace) option(*nodebugio:*nounref)
+         ctl-opt dftactgrp(*no) alloc(*teraspace) stgmdl(*teraspace)
                  main(main) actgrp('WEBSRV11') bnddir('WEBSRVUTL');
       //------------------------------------------------------------------//
       //                                                                  //
@@ -31,7 +31,7 @@
       // Variables                                                        //
       //------------------------------------------------------------------//
 
-         dcl-s   GblJson     SQLType(CLOB:1000000) ccsid(*utf8);
+         dcl-s   GblJson     SQLType(CLOB:16000000) ccsid(*utf8); // 16 MB
 
       //------------------------------------------------------------------//
       // Main                                                             //
@@ -48,19 +48,15 @@
             on-error;
            endmon;
 
-           if DsData.Id <> *zero;
-              crtJson01(DsData);                      // Create JSON-Data
-            else;
-              crtJson02(DsData);                      // Create JSON-Data
-           endif;
+           crtJson(DsData);                           // Create JSON-Data
 
            writeStdout(%addr(GblJson_Data):GblJson_Len);
 
          end-proc;
       //------------------------------------------------------------------//
-      // Create JSON-Data - one Customer                                  //
+      // Create JSON-Data                                                 //
       //------------------------------------------------------------------//
-         dcl-proc crtJson01;
+         dcl-proc crtJson;
          dcl-pi *n;
                  PiData      likeds(DsData) const;
          end-pi;
@@ -84,38 +80,11 @@
                )
              )
              into :GblJson
-             from myapp.customer
-            where Id = :DsData.Id;
-
-         end-proc;
-      //------------------------------------------------------------------//
-      // Create JSON-Data - all Customers                                 //
-      //------------------------------------------------------------------//
-         dcl-proc crtJson02;
-         dcl-pi *n;
-                 PiData      likeds(DsData) const;
-         end-pi;
-
-           exec sql
-            select JSON_OBJECT(
-             'items' value
-               JSON_ARRAYAGG(
-                JSON_OBJECT(
-                 'id'      value id,
-                 'country' value trim(country),
-                 'name'    value trim(name),
-                 'zip'     value trim(zip),
-                 'city'    value trim(city),
-                 'street'  value trim(street),
-                 'sales'   value sales,
-                 'credit'  value credit,
-                 'balance' value balance,
-                 'date'    value date
-                )
-               )
-             )
-             into :GblJson
-             from myapp.customer;
+             from customer
+            where Id = Case
+                        When :PiData.Id > 0 Then :PiData.Id
+                        Else Id
+                       End;
 
          end-proc;
       //------------------------------------------------------------------// 
