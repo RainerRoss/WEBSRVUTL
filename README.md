@@ -75,10 +75,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 );
 ```
 ## More Web Applications built with Web Services and www.webix.com
-* Your Spoolfiles in the Browser www.myhofi.com/devhtm/spoolsorter.htm
-* You love Charts built with www.webix.com and www.highcharts.com www.myhofi.com/devhtm/charts.htm
-* You need urgent a Web Application with Gantt www.myhofi.com/devhtm/MyGantt.html
-* Data Management with Sidebar Menu, Google Maps and Language Selection www.myhofi.com/devhtm/myapp.html
+* Data Management with Menu, Google Maps, Gantt, Gages, Charts and Scheduler and Language Selection http://www.myhofi.com/tms/HTML/Myapp.html
 
 ## Super simple to use
 * Read the HTTP Environment Variables `getenv()`
