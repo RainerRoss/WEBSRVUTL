@@ -87,6 +87,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Create HTTP-Header `getHeader()`
 * Read Data from the HTTP-Server `readStdin()`
 * Write Data to the HTTP-Server `wrtStdout()`
+* Write Data to the HTTP-Server and generate HTTP-Header `writeStdout()`
 
 ## How to use it in your RPG-Program
 Example GET-Request from a business partner to your IBM i  <br>`http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross`
@@ -97,9 +98,7 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
    dcl-proc main;                                                  
    
    dcl-s   LocId       like(Id);                 // Id 
-   dcl-s   LocName     like(Name);               // Name     
-                                                                
-    LocHeader = getHeader(JSON);                 // Get HTTP-Header 
+   dcl-s   LocName     like(Name);               // Name   
                                                                 
     getInput();                                  // Get Input       
   
@@ -120,12 +119,12 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
 
 ### Procedure `getenv()` read the HTTP Environment Variables - [Useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
 ```
-LocMethod  = %str(getenv('REQUEST_METHOD':DsApierr)); // Result GET or POST
+LocMethod  = %str(getenv('REQUEST_METHOD')); // Result GET or POST
 ```
 #### When the Environment Variable is not delivered then put the command in a Monitor Statement like this
 ```
 Monitor;
- LocAuth  = %str(getenv('AUTH_TYPE':DsApierr)); // Authentification Type
+ LocAuth  = %str(getenv('AUTH_TYPE')); // Authentification Type
  on-error;
 End-Mon;
 ```
@@ -197,6 +196,29 @@ MyData = 'HelloWorld';
 wrtStdout(%addr(MyData:*data):%len(MyData):DsApierr); 
 ```
 
+### Procedure `writeStdout()` writes Data to the HTTP-Server and generates the HTTP-Header
+
+#### The Procedure has three Parameters
+```
+* Data	      Pointer	
+* Data-Length int(10)
+* Type        uns(03) options(*nopass) JSON, XML, TEXT default is JSON
+```
+#### Example Char(256)
+```
+Dcl-S  MyData  char(256) ccsid(*UTF8);
+
+MyData = 'HelloWorld';
+writeStdout(%addr(MyData):%len(%trimr(MyData)):TEXT); 
+```
+#### Example VarChar(256)
+```
+Dcl-S  MyData  varchar(256) ccsid(*UTF8);
+
+MyData = 'HelloWorld';
+wrtStdout(%addr(MyData:*data):%len(MyData):TEXT); 
+```
+
 ## IBM i System API's used from the Service Program WEBSRVUTL 
 * QtmhRdStin [more Information](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzaie/rzaieapi_qtmhrdstin.htm)
 * QtmhWrStout [more Information](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzaie/rzaieapi_qtmhwrstout.htm)
@@ -215,7 +237,7 @@ License Programs
 * 5770SS1 Option 39 – Components for Unicode
 * 5770TC1 - TCP/IP	
 * 5770JV1 - Java
-* 5770DG1 – HTTP-Server: Apache 2.4.12
+* 5770DG1 – HTTP-Server: Apache 2.4.20
 
 Non-License Software (open source)
 
@@ -225,6 +247,7 @@ Non-License Software (open source)
 
 * Create a library  `CRTLIB LIB(WEBSRVUTL) TEXT('Webservice Utilities')`
 * Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QCLPSRC)`
+* Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QSRVSRC)`
 * Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QCPYSRC)`
 * Create a source physical file `CRTSRCPF FILE(WEBSRVUTL/QMODSRC)`
 * Copy the files from `QCLPSRC, QCPYSRC, QMODSRC` to your SRCPF's
