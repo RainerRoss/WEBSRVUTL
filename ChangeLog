@@ -1,18 +1,28 @@
+
 Changes to version 1.4 from 1.3:
+
   - new Procedure writeStdOut(Data_p:DataLength:Type);
         Data_p     = (input)           Data-Pointer
         DataLength = (input)           length of Data
         DataType   = (input, optional) JSON, XML, TEXT (JSON = Default)
 
-  - wrtStdOut() includes the getHeader() Procedure - look at example WEBSRV11
+  - change getInput(Type) Procedure with Parameter Type to manage JSON, XML and TEXT-data
+        getInput() or getInput(TEXT) receive GET/POST with TEXT-data
+        WBInput = getInput(JSON)     receive POST with JSON-data
+        WBInput = getInput(XML)      receive POST with XML-data
+
+  - writeStdOut() includes the getHeader() Procedure - look at example WEBSRV11
+        DataType = (input, optional) JSON, XML, TEXT (JSON = Default)
 
 
 Changes to version 1.5 from 1.4:
-  - WEBSRVUTLC - Service Program and Binding Directory V1.5
-    CRTSRVPGM - new Parameter STGMDL(*INHERIT)
-    CRTSRVPGM - new Binding source WEBSRVUTL.BND
-  - new Procedure encBase64    (Encode String to Base64)
-  - new Procedure decBase64bin (Decode Base64 to String)
-  - /copy websrvutl/qcpysrc,apierr no longer necessary in programs
-    and is now a part from
-    /copy websrvutl/qcpysrc,websrvutl 
+
+  - new WEBSRVUTL/QSRVSRC - SRCPF for Binding Source
+  - new WEBSRVUTL.BND - Binding Source
+  - change WEBSRVUTLC - Service Program and Binding Directory V1.5
+  - change CRTSRVPGM - new Parameter STGMDL(*INHERIT)
+  - change CRTSRVPGM - new binding source WEBSRVUTL.BND
+  - new encBase64    Procedure (Encode String to Base64)
+  - new decBase64bin Procedure (Decode Base64 to String)
+  - /copy websrvutl/qcpysrc,apierr no longer necessary in programs and is now a part from
+    /copy websrvutl/qcpysrc,websrvutl
