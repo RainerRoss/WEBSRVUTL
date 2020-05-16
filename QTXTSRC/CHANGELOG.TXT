@@ -25,5 +25,5 @@ Changes to version 1.5 from 1.4:
   - change CRTSRVPGM - new binding source WEBSRVUTL.BND
   - new encBase64    procedure (Encode String to Base64)
   - new decBase64bin procedure (Decode Base64 to String)
-  - /copy websrvutl/qcpysrc,apierr no longer necessary in programs and is now a part from
+  - /copy websrvutl/qcpysrc,apierr no longer necessary in programs and is now part from
     /copy websrvutl/qcpysrc,websrvutl 
