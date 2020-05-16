@@ -1,0 +1,18 @@
+Changes to version 1.4 from 1.3:
+  - new Procedure writeStdOut(Data_p:DataLength:Type);
+        Data_p     = (input)           Data-Pointer
+        DataLength = (input)           length of Data
+        DataType   = (input, optional) JSON, XML, TEXT (JSON = Default)
+
+  - wrtStdOut() includes the getHeader() Procedure - look at example WEBSRV11
+
+
+Changes to version 1.5 from 1.4:
+  - WEBSRVUTLC - Service Program and Binding Directory V1.5
+    CRTSRVPGM - new Parameter STGMDL(*INHERIT)
+    CRTSRVPGM - new binding source WEBSRVUTL.BND
+  - new Procedure encBase64    (Encode String to Base64)
+  - new Procedure decBase64bin (Decode Base64 to String)
+  - /copy websrvutl/qcpysrc,apierr no longer necessary in programs
+    and is now a part from
+    /copy websrvutl/qcpysrc,websrvutl 
