@@ -118,7 +118,7 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
 ```
 
 ## How to use it in your RPG-Program with SQL to generate JSON
-Example GET-Request from a business partner to your IBM i  <br>`http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross`
+Example GET-Request from a business partner to your IBM i  <br>`http://www.mycompany.com/myapp/request.pgm?id=5`
 ```
       //------------------------------------------------------------------//
       // Variables                                                        //
