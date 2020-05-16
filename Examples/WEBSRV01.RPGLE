@@ -17,15 +17,16 @@
       //------------------------------------------------------------------//
 
       /include websrvutl/qcpysrc,websrvutl            // Webservice Utilities
-      /include websrvutl/qcpysrc,apierr               // API-Error
       /include yajl/qrpglesrc,yajl_h                  // JSON Utilities
 
       //------------------------------------------------------------------//
-      // Variables                                                        //
+      // Table Data                                                       //
       //------------------------------------------------------------------//
 
-         dcl-s   GblErrmsg   varchar(500);
-         dcl-c   GblStatusOk Const(200);
+         dcl-ds  TbData      qualified;               // DataTable
+                  Success    ind inz(*on);            // Success
+                  Errmsg     char(80);                // ErrorMessage
+         end-ds;
 
       //------------------------------------------------------------------//
       // Processing                                                       //
@@ -39,7 +40,11 @@
       //------------------------------------------------------------------//
          dcl-proc main;
 
+         dcl-s   LocErrmsg   varchar(500);
+
          dcl-s   LocId       like(Id);                // Id
+
+           reset TbData;
 
            getInput();                                // Get Input
 
@@ -51,7 +56,7 @@
 
            yajl_genopen(*on);
             crtjson(LocId);
-            yajl_writeStdout(GblStatusOk:GblErrMsg);
+            yajl_writeStdout(200:LocErrMsg);
            yajl_genclose();
 
          end-proc;
@@ -64,9 +69,8 @@
          end-pi;
 
            yajl_beginobj();
-            yajl_addbool('success':*on);
-            yajl_addchar('errmsg' :%trim(GblErrMsg));
-
+            yajl_addbool('success':TbData.Success);
+            yajl_addchar('errmsg' :%trim(TbData.Errmsg));
             yajl_beginarray('items');                 // Items
              readCustomer(PiId);                      // Read Customer
             yajl_endarray();
