@@ -94,6 +94,7 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
 //------------------------------------------------------------------//
    dcl-proc main;                                                  
    
+   dcl-s   LocErrmsg   varchar(500);              
    dcl-s   LocId       like(Id);                 // Id 
    dcl-s   LocName     like(Name);               // Name   
                                                                 
@@ -107,7 +108,7 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
     
     yajl_genopen(*on);
       crtjson(LocId);
-      yajl_writeStdout(GblStatusOk:GblErrMsg);
+      yajl_writeStdout(200:GblErrMsg);
     yajl_genclose();
     
   end-proc;  
