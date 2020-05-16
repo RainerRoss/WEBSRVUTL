@@ -11,7 +11,7 @@
       //------------------------------------------------------------------//
 
          dcl-pr readdir      pointer extproc(*dclcase);
-                 dir_p       pointer value options(*string);
+                 dirname     pointer value options(*string);
          end-pr;
 
       //------------------------------------------------------------------//
@@ -20,6 +20,32 @@
 
          dcl-pr closedir     int(10) extproc(*dclcase);
                  dirname     pointer value options(*string);
+         end-pr;
+
+      //------------------------------------------------------------------//
+      // Make-Directory                                                   //
+      //------------------------------------------------------------------//
+
+         dcl-pr mkdir        int(10) extproc(*dclcase);
+                 path        pointer value options(*string);
+                 mode        uns(10) value;
+         end-pr;
+
+      //------------------------------------------------------------------//
+      // Remove-Directory                                                 //
+      //------------------------------------------------------------------//
+
+         dcl-pr rmdir        int(10) extproc(*dclcase);
+                 path        pointer value options(*string);
+         end-pr;
+
+      //------------------------------------------------------------------//
+      // Check Access to Path or File                                     //
+      //------------------------------------------------------------------//
+
+         dcl-pr access       int(10) extproc(*dclcase);
+                 path        pointer value options(*string);
+                 mode        int(10) value;
          end-pr;
 
       //------------------------------------------------------------------//
@@ -47,9 +73,18 @@
       //------------------------------------------------------------------//
 
          dcl-pr read         int(10) extproc(*dclcase);
-                 fildes      int(10) value;
-                 filbuffer   pointer value;
-                 filbyte     uns(10) value;
+                 filedesc    int(10) value;
+                 filebuffer  pointer value;
+                 filebyte    uns(10) value;
+         end-pr;
+
+      //------------------------------------------------------------------//
+      // Rename-File                                                      //
+      //------------------------------------------------------------------//
+
+         dcl-pr rename       int(10) extproc('Qp0lRenameKeep');
+                 oldname     pointer value options(*string);
+                 newname     pointer value options(*string);
          end-pr;
 
       //------------------------------------------------------------------//
@@ -57,9 +92,9 @@
       //------------------------------------------------------------------//
 
          dcl-pr write        int(10) extproc(*dclcase);
-                 fildes      int(10) value;
-                 filbuffer   pointer value;
-                 filbyte     uns(10) value;
+                 filedesc    int(10) value;
+                 filebuffer  pointer value;
+                 filebyte    uns(10) value;
          end-pr;
 
       //------------------------------------------------------------------//
@@ -67,7 +102,7 @@
       //------------------------------------------------------------------//
 
          dcl-pr close        int(10) extproc(*dclcase);
-                 fildes      int(10) value;
+                 filedesc    int(10) value;
          end-pr;
 
       //------------------------------------------------------------------//
@@ -75,100 +110,92 @@
       //------------------------------------------------------------------//
 
          dcl-pr unlink       int(10) extproc(*dclcase);
-                 filname     pointer value options(*string);
+                 filename    pointer value options(*string);
          end-pr;
-
-      //------------------------------------------------------------------//
-      // FilInf02 - Get FileInformation                                   //
-      //------------------------------------------------------------------//
-
-         dcl-pr filinf02     extpgm;
-                 ##stmf      like(d#stmf) const options(*varsize);
-                 ##filsiz    like(d#filsiz);
-                 ##chgstmp   like(d#chgstmp);
-                 ##filccsid  like(d#filccs);
-                 ##sysccsid  like(d#sysccs);
-         end-pr;
-
-         dcl-s   d#stmf      varchar(640);            // StreamFile
-         dcl-s   d#filsiz    int(20);                 // FileSize
-         dcl-s   d#chgstmp   timestamp;               // FileChangeStamp
-         dcl-s   d#filccs    uns(10);                 // File   CCSID
-         dcl-s   d#sysccs    uns(10);                 // System CCSID
 
       //------------------------------------------------------------------//
       // Array Directory Data                                             //
       //------------------------------------------------------------------//
 
-         dcl-s   d#dirent_p  pointer;                 // DirectoryEntryPtr
+         dcl-s   GblDirent_p  pointer;                // DirectoryEntryPtr
 
-         dcl-ds  dsdirent    qualified based(d#dirent_p);
-                  d#reserv1  char(16);
-                  d#reserv2  uns(10);
-                  d#fileno   uns(10);
-                  d#reclen   uns(10);
-                  d#reserv3  int(10);
-                  d#reserv4  char(08);
-                  d#nlsinfo  char(12);
-                  d#nlsccsid int(10)  overlay(d#nlsinfo:01);
-                  d#nlsentry char(02) overlay(d#nlsinfo:05);
-                  d#nlslang  char(03) overlay(d#nlsinfo:07);
-                  d#nlsreser char(03) overlay(d#nlsinfo:10);
-                  d#namelen  uns(10);
-                  d#name     char(640);
+         dcl-ds  DsDirent    qualified based(GblDirent_p);
+                  Reserv1  char(16);
+                  Reserv2  uns(10);
+                  Fileno   uns(10);
+                  Rreclen   uns(10);
+                  Reserv3  int(10);
+                  Reserv4  char(08);
+                  NlsInfo  char(12);
+                  NlsCcsid int(10)  overlay(NlsInfo:01);
+                  NlsEntry char(02) overlay(NlsInfo:05);
+                  NlsLang  char(03) overlay(NlsInfo:07);
+                  NlsReser char(03) overlay(NlsInfo:10);
+                  Namelen  uns(10);
+                  Name     char(640);
          end-ds;
 
       //------------------------------------------------------------------//
-      // Konstanten IFS-File Parameter                                    //
+      // Constants IFS Parameter                                          //
       //------------------------------------------------------------------//
 
-         dcl-c   o#rdonly    1;                       // Read Only
-         dcl-c   o#wronly    2;                       // Write Only
-         dcl-c   o#rdwr      4;                       // Read & Write
-         dcl-c   o#creat     8;                       // Create File
-         dcl-c   o#excl      16;                      // Exclusive Create
-         dcl-c   o#ccsid     32;                      // Assign CCSID
-         dcl-c   o#trunc     64;                      // Truncate File
-         dcl-c   o#append    256;                     // Append File
-         dcl-c   o#writesync 1024;                    // Synchronus write
-         dcl-c   o#readsync  4096;                    // Synchronus read
-         dcl-c   o#codepage  8388608;                 // Assign a Code Page
-         dcl-c   o#textdata  16777216;                // Open in TextMode
-         dcl-c   o#textcreat 33554432;                // TextTranslation
-         dcl-c   o#largefile 536870912;               // File > 2GB
+         dcl-c   GblRdonly    1;                      // Read Only
+         dcl-c   GblWronly    2;                      // Write Only
+         dcl-c   GblRdwr      4;                      // Read & Write
+         dcl-c   GblCreat     8;                      // Create File
+         dcl-c   GblExcl      16;                     // Exclusive Create
+         dcl-c   GblCcsid     32;                     // Assign CCSID
+         dcl-c   GblTrunc     64;                     // Truncate File
+         dcl-c   GblAppend    256;                    // Append File
+         dcl-c   GblWritesync 1024;                   // Synchronus write
+         dcl-c   GblReadsync  4096;                   // Synchronus read
+         dcl-c   GblCodepage  8388608;                // Assign a Code Page
+         dcl-c   GblTextdata  16777216;               // Open in TextMode
+         dcl-c   GblTextcreat 33554432;               // TextTranslation
+         dcl-c   GblLargefile 536870912;              // File > 2GB
 
       //------------------------------------------------------------------//
-      // Konstanten IFS-File Authority                                    //
+      // Constants IFS Authority                                          //
       //  user      owner   group   other                                 //
       //  access    R W X   R W X   R W X                                 //
       //------------------------------------------------------------------//
 
-         dcl-c   s#irusr     256;
-         dcl-c   s#iwusr     128;
-         dcl-c   s#ixusr     64;
-         dcl-c   s#irwxu     448;
+         dcl-c   GblIrusr    256;
+         dcl-c   GblIwusr    128;
+         dcl-c   GblIxusr    64;
+         dcl-c   GblIrwxu    448;
 
-         dcl-c   s#irgrp     32;
-         dcl-c   s#iwgrp     16;
-         dcl-c   s#ixgrp     8;
-         dcl-c   s#irwxg     56;
+         dcl-c   GblIrgrp    32;
+         dcl-c   GblIwgrp    16;
+         dcl-c   GblIxgrp    8;
+         dcl-c   GblIrwxg    56;
 
-         dcl-c   s#iroth     4;
-         dcl-c   s#iwoth     2;
-         dcl-c   s#ixoth     1;
-         dcl-c   s#irwxo     7;
+         dcl-c   GblIroth    4;
+         dcl-c   GblIwoth    2;
+         dcl-c   GblIxoth    1;
+         dcl-c   GblIrwxo    7;
 
       //------------------------------------------------------------------//
-      // Variablendefinition                                              //
+      // Constants IFS access() mode                                      //
       //------------------------------------------------------------------//
 
-         dcl-s   d#flags     int(10);                 // Flags
-         dcl-s   d#auth      int(10);                 // Authority
-         dcl-s   d#fd        int(10);                 // FileDescriptor
-         dcl-s   d#byte      uns(10);                 // Bytes
+         dcl-c  F_Ok         const(0);                // File Exists
+         dcl-c  R_Ok         const(4);                // Read Access
+         dcl-c  W_Ok         const(2);                // Write Access
+         dcl-c  X_Ok         const(1);                // Execute or Search
 
-         dcl-s   d#dir_p     pointer;                 // DirectoryPointer
-         dcl-s   d#dir       varchar(128);            // Directory
-         dcl-s   d#file      varchar(512);            // File
+      //------------------------------------------------------------------//
+      // Variables                                                        //
+      //------------------------------------------------------------------//
+
+         dcl-s   GblFlags    int(10);                 // Flags
+         dcl-s   GblAuth     int(10);                 // Authority
+         dcl-s   GblFd       int(10);                 // FileDescriptor
+         dcl-s   GblByte     uns(10);                 // Bytes
+
+         dcl-s   GblDir_p    pointer;                 // DirectoryPointer
+         dcl-s   GblDir      varchar(512);            // Directory
+         dcl-s   GblFile     varchar(512);            // File
+         dcl-s   GblStmf     varchar(1024);           // Streamfile
 
       //------------------------------------------------------------------// 
