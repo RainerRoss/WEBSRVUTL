@@ -86,7 +86,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Write Data to the HTTP-Server `wrtStdout()`
 * Write Data to the HTTP-Server and generate HTTP-Header `writeStdout()`
 
-## How to use it in your RPG-Program with Scott Klements YAJL Link to [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV01.SQLRPGLE)
+## How to use it in your RPG-Program with Scott Klements YAJL- [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV11.SQLRPGLE)
 Example GET-Request from a business partner to your IBM i  <br>`http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross`
 ```
 //------------------------------------------------------------------//
@@ -115,7 +115,7 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
 //------------------------------------------------------------------//
 ```
 
-## How to use it in your RPG-Program with SQL to generate JSON-Data [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV11.SQLRPGLE)
+## How to use it in your RPG-Program with SQL to generate JSON-Data - [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV11.SQLRPGLE)
 Example GET-Request from a business partner to your IBM i  <br>`http://www.mycompany.com/myapp/request.pgm?id=5`
 ```
       //------------------------------------------------------------------//
