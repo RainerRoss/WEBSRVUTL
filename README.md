@@ -89,7 +89,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 * Write Data to the HTTP-Server `wrtStdout()`
 * Write Data to the HTTP-Server and generate HTTP-Header `writeStdout()`
 
-## How to use it in your RPG-Program
+## How to use it in your RPG-Program with Scott Klements YAJL
 Example GET-Request from a business partner to your IBM i  <br>`http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross`
 ```
 //------------------------------------------------------------------//
@@ -116,6 +116,73 @@ Example GET-Request from a business partner to your IBM i  <br>`http://www.mycom
   end-proc;  
 //------------------------------------------------------------------//
 ```
+
+## How to use it in your RPG-Program with SQL to generate JSON
+Example GET-Request from a business partner to your IBM i  <br>`http://www.mycompany.com/myapp/request.pgm?id=5&name=Ross`
+```
+     //------------------------------------------------------------------//
+      // Variables                                                        //
+      //------------------------------------------------------------------//
+
+         dcl-s   GblJson     SQLType(CLOB:16000000) ccsid(*utf8); // 16 MB
+
+      //------------------------------------------------------------------//
+      // Main                                                             //
+      //------------------------------------------------------------------//
+         dcl-proc main;
+
+           clear GblJson;                             // JSON-Data
+           clear DsData;                              // Input-Data
+
+           getInput();                                // Get Input
+
+           monitor;
+             DsData.Id = %dec(getKeyValue('Id'):9:0); // Customer-Id
+            on-error;
+           endmon;
+
+           crtJson(DsData);                           // Create JSON-Data
+
+           writeStdout(%addr(GblJson_Data):GblJson_Len);
+
+         end-proc;
+      //------------------------------------------------------------------//
+      // Create JSON-Data                                                 //
+      //------------------------------------------------------------------//
+         dcl-proc crtJson;
+         dcl-pi *n;
+                 PiData      likeds(DsData) const;
+         end-pi;
+
+           exec sql
+            select JSON_OBJECT(
+             'items' value
+               JSON_ARRAYAGG(
+                JSON_OBJECT(
+                 'id'      value id,
+                 'country' value trim(country),
+                 'name'    value trim(name),
+                 'zip'     value trim(zip),
+                 'city'    value trim(city),
+                 'street'  value trim(street),
+                 'sales'   value sales,
+                 'credit'  value credit,
+                 'balance' value balance,
+                 'date'    value date
+                )
+               )
+             )
+             into :GblJson
+             from customer
+            where Id = Case
+                        When :PiData.Id > 0 Then :PiData.Id
+                        Else Id
+                       End;
+
+         end-proc;
+      //------------------------------------------------------------------//  
+```
+
 
 ### Procedure `getenv()` read the HTTP Environment Variables - [Useful Link](http://www.easy400.net/cgidev2o/exhibit6.htm)
 ```
