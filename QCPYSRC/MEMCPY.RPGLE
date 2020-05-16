@@ -1,11 +1,11 @@
       //------------------------------------------------------------------//
-      // Memcopy                                                          //
+      // MemCopy                                                          //
       //------------------------------------------------------------------//
 
          dcl-pr memcpy       extproc(*dclcase);
-                 mctarget    pointer value;
-                 mcsource    pointer value;
-                 mclength    uns(10) value;
+                 target      pointer value;
+                 source      pointer value;
+                 length      uns(10) value;
          end-pr;
 
       //------------------------------------------------------------------// 
