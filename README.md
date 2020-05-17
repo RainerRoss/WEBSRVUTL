@@ -49,18 +49,18 @@ Providing JSON www.myhofi.com/myapp/websrv11.pgm?id=1 Link to [Sourcecode](https
 Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 Link to [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.SQLRPGLE)
 ```
 <data>
-	<customer>
-		<id>1</id>
-		<name>MINERALÖL-TANKSTELLE</name>
-		<country>DE</country>
-		<zip>12559</zip>
-		<city>BERLIN</city>
-		<street>GOETHESTR. 8</street>
-		<sales>535647.59</sales>
-		<credit>5000.00</credit>
-		<balance>1650.00</balance>
-		<date>2015-02-06</date>
-	</customer>
+   <customer>
+	<id>1</id>
+	<name>MINERALÖL-TANKSTELLE</name>
+	<country>DE</country>
+	<zip>12559</zip>
+	<city>BERLIN</city>
+	<street>GOETHESTR. 8</street>
+	<sales>535647.59</sales>
+	<credit>5000.00</credit>
+	<balance>1650.00</balance>
+	<date>2015-02-06</date>
+   </customer>
 </data> 
 ```
  
