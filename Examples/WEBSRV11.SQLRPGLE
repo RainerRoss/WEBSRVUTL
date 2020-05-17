@@ -50,6 +50,7 @@
 
            clear GblJson;                             // JSON-Data
            clear DsData;                              // Input-Data
+           reset DsStatus;                            // Status
 
            getInput();                                // Get Input
 
