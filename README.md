@@ -27,7 +27,8 @@ Providing JSON www.myhofi.com/myapp/websrv11.pgm?id=1 Link to [Sourcecode](https
 ```
 {
     "success": true,
-    "errmsg": "",
+    "errormsg": "",    
+    "errorid": 0,
     "items": [
         {
             "id": 1,
