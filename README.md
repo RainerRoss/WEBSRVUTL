@@ -49,7 +49,7 @@ Providing JSON www.myhofi.com/myapp/websrv11.pgm?id=1 Link to [Sourcecode](https
 Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 Link to [Sourcecode](https://github.com/RainerRoss/WEBSRVUTL/blob/master/Examples/WEBSRV02.SQLRPGLE)
 ```
 <data>
-	<item>
+	<customer>
 		<id>1</id>
 		<name>MINERALÖL-TANKSTELLE</name>
 		<country>DE</country>
@@ -60,7 +60,7 @@ Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 Link to [Sourcecode](https:
 		<credit>5000.00</credit>
 		<balance>1650.00</balance>
 		<date>2015-02-06</date>
-	</item>
+	</customer>
 </data>
 ```
 
