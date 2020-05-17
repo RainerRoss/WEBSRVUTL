@@ -61,7 +61,7 @@ Providing XML www.myhofi.com/myapp/websrv02.pgm?id=1 Link to [Sourcecode](https:
 		<balance>1650.00</balance>
 		<date>2015-02-06</date>
 	</customer>
-</data>
+</data> 
 ```
 
 Web Application with AJAX-Request to the JSON-Webservice www.myhofi.com/devhtm/websrv04.html
