@@ -20,6 +20,16 @@
          dcl-ds  DsCustomer  extname('CUSTOMER') qualified alias end-ds;
 
       //------------------------------------------------------------------//
+      // Array Status                                                     //
+      //------------------------------------------------------------------//
+
+         dcl-ds  DsStatus    qualified;
+                  Success    varchar(05) inz('true');
+                  ErrorMsg   char(256);
+                  ErrorId    uns(10) inz(0);
+         end-ds;
+
+      //------------------------------------------------------------------//
       // Array Input-Data                                                 //
       //------------------------------------------------------------------//
 
@@ -63,12 +73,15 @@
 
            exec sql
             select JSON_OBJECT(
-             'items' value
+             'success'  value trim(:DsStatus.Success) Format JSON,
+             'errormsg' value trim(:DsStatus.ErrorMsg),
+             'errorid'  value :DsStatus.ErrorId,
+             'items'    value
                JSON_ARRAYAGG(
                 JSON_OBJECT(
                  'id'      value id,
-                 'country' value trim(country),
                  'name'    value trim(name),
+                 'country' value trim(country),
                  'zip'     value trim(zip),
                  'city'    value trim(city),
                  'street'  value trim(street),
