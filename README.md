@@ -76,7 +76,7 @@ webix.ajax().post("/myapp/websrv01.pgm", {id:0},
 );
 ```
 ## More Web Applications built with Web Services and www.webix.com
-* Data Management with Menu, Google Maps, Gantt, Gages, Charts and Scheduler and Language Selection http://www.myhofi.com/tms/HTML/Myapp.html
+* Data Management with Menu, Google Maps, Gantt, Gages, Charts and Scheduler http://www.myhofi.com/tms/HTML/Myapp.html
 
 ## Super simple to use
 * Read the HTTP Environment Variables `getenv()`
