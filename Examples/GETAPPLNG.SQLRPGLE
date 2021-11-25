@@ -1,5 +1,5 @@
          ctl-opt dftactgrp(*no) alloc(*teraspace) option(*nodebugio:*nounref)
-                 main(main) actgrp('APPLNG') bnddir('WEBSRVUTL');
+                 main(main) actgrp('GETAPPLNG') bnddir('WEBSRVUTL');
       //------------------------------------------------------------------//
       //                                                                  //
       // Get Application-Languages                                        //
