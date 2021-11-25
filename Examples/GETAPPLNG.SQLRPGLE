@@ -41,8 +41,8 @@
              'data' value
                JSON_ARRAYAGG(
                 JSON_OBJECT(
-                  'id'    value Language,
-                  'value' value Language
+                  'id'       value Id,
+                  'language' value Language
                 ) order by Language
                )
              )
